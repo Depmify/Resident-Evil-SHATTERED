@@ -1,4 +1,4 @@
-﻿# Installation Guide
+# Installation Guide
 
 This guide explains how to set up **RESIDENT EVIL: SHATTERED** from a public release package.
 
