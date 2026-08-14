@@ -42,6 +42,10 @@ Public builds will be published through the repository's **Releases** page when 
 
 > No original Resident Evil game assets are included in this repository or in public releases.
 
+## Installation
+
+For setup instructions, supported game data, and the expected launcher folder layout, see [INSTALL.md](INSTALL.md).
+
 ## Requirements
 
 To use SHATTERED, you must provide your own legally obtained copy of the required Resident Evil 1 game data.
@@ -86,5 +90,6 @@ This project does not distribute original game assets, copyrighted data files, o
 
 ## Links
 
+- [Installation Guide](INSTALL.md)
 - [Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)
