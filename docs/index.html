@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RESIDENT EVIL: SHATTERED is an early closed-source fan project with public test builds and experimental split-screen support.">
+    <meta name="theme-color" content="#120f0f">
+    <title>RESIDENT EVIL: SHATTERED</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="RESIDENT EVIL: SHATTERED home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-logo">
+          <span>Resident Evil</span>
+          <span>Shattered</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#why">Why</a>
+        <a href="#status">Status</a>
+        <a href="#screens">Screens</a>
+        <a href="#community">Discord</a>
+        <a href="#support">Support</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-background" data-banner-stage aria-hidden="true">
+          <img class="banner-layer is-visible is-top" data-banner-layer="0" src="assets/banner-1.gif" alt="">
+          <img class="banner-layer is-bottom" data-banner-layer="1" src="assets/banner-2.gif" alt="">
+          <span class="crt-noise"></span>
+          <span class="perspective-label" data-perspective-label>Perspective A</span>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Early public test build</p>
+          <h1 class="title-logo" id="hero-title" aria-label="Resident Evil: Shattered">
+            <span class="title-main">RESIDENT EVIL</span>
+            <span class="title-sub">SHATTERED</span>
+          </h1>
+          <p class="hero-copy">
+            A Resident Evil project built to share classic survival horror with
+            your friends through experimental split-screen support.
+          </p>
+          <div class="hero-actions" aria-label="Primary links">
+            <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.0.1">Download v0.0.1</a>
+            <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/INSTALL.md">Installation Guide</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice-band" aria-label="Important notices">
+        <p>No original Resident Evil game assets are included.</p>
+        <p>Users must provide their own legally obtained supported game data.</p>
+        <p>Public builds may contain bugs and incomplete behavior.</p>
+      </section>
+
+      <section class="section why" id="why">
+        <div class="why-statement">
+          <p class="eyebrow">Why Shattered?</p>
+          <h2>Classic fixed-camera horror was built to isolate you.</h2>
+        </div>
+        <div class="why-copy">
+          <p>
+            SHATTERED asks what happens when that fear becomes shared: when two
+            players step into the same mansion, split attention across the room,
+            and turn survival-horror tension into a co-op memory.
+          </p>
+          <p>
+            The goal is not to replace the original feeling. It is to preserve the
+            mood, friction, and strange quiet of classic survival horror while
+            opening a new way to experience it with a friend.
+          </p>
+        </div>
+      </section>
+
+      <section class="section split" id="status">
+        <div>
+          <p class="eyebrow">Current state</p>
+          <h2>Built for testing, not for polished play.</h2>
+        </div>
+        <div class="status-grid">
+          <article class="panel">
+            <h3>Available</h3>
+            <p>Public test build v0.0.1 with launcher entry point, basic startup flow, and supported data-layout documentation.</p>
+          </article>
+          <article class="panel">
+            <h3>Experimental</h3>
+            <p>Split-screen support and gameplay behavior are still being explored and may change between builds.</p>
+          </article>
+          <article class="panel">
+            <h3>Private</h3>
+            <p>The active source code, internal tools, research branches, and development assets are maintained outside this repository.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="screens">
+        <div class="section-heading">
+          <p class="eyebrow">Screenshots</p>
+          <h2>Public build preview</h2>
+        </div>
+
+        <div class="gallery" data-gallery>
+          <div class="gallery-frame is-gameplay" data-gallery-frame>
+            <img data-gallery-image src="assets/splitscreen-gameplay.png" alt="Resident Evil: Shattered split-screen test build">
+          </div>
+          <div class="gallery-controls" role="list" aria-label="Screenshot selector">
+            <button class="thumb is-active" type="button" data-image="assets/splitscreen-gameplay.png" data-alt="Resident Evil: Shattered split-screen test build" data-fit="gameplay" aria-pressed="true">
+              <img src="assets/splitscreen-gameplay.png" alt="">
+              <span>Split-screen</span>
+            </button>
+            <button class="thumb" type="button" data-image="assets/launcher-game.png" data-alt="Resident Evil: Shattered launcher" data-fit="interface" aria-pressed="false">
+              <img src="assets/launcher-game.png" alt="">
+              <span>Launcher</span>
+            </button>
+            <button class="thumb" type="button" data-image="assets/launcher-inventory.png" data-alt="Resident Evil: Shattered inventory setup" data-fit="interface" aria-pressed="false">
+              <img src="assets/launcher-inventory.png" alt="">
+              <span>Inventory</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section install" id="install">
+        <div>
+          <p class="eyebrow">Setup</p>
+          <h2>What the current public build expects</h2>
+          <p>
+            SHATTERED v0.0.1 is documented for Windows and a legally obtained copy
+            of GOG's Resident Evil 1 PC Port. Other versions are not currently
+            treated as supported public test targets.
+          </p>
+        </div>
+        <div class="install-actions">
+          <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases">Releases</a>
+          <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/issues">Report an Issue</a>
+        </div>
+      </section>
+
+      <section class="section community" id="community">
+        <div class="section-heading community-heading">
+          <div>
+            <p class="eyebrow">Community</p>
+            <h2>Join Shattered Team Projects</h2>
+          </div>
+          <a class="button primary" href="https://discord.gg/y2947VsHG">Join Discord</a>
+        </div>
+        <div class="community-grid">
+          <article class="panel">
+            <h3>Vote on features</h3>
+            <p>Help shape what gets tested next across Depmify's survival-horror projects.</p>
+          </article>
+          <article class="panel">
+            <h3>Talk with Depmify</h3>
+            <p>Follow development, ask questions, share feedback, and report what breaks in public builds.</p>
+          </article>
+          <article class="panel">
+            <h3>Find players</h3>
+            <p>Organize sessions with other users for RESIDENT EVIL: SHATTERED or Silent Hill: United.</p>
+          </article>
+        </div>
+        <p class="community-note">
+          The server brings both communities together around multiplayer survival-horror testing, release news, and player coordination.
+        </p>
+      </section>
+
+      <section class="section support" id="support">
+        <div class="support-copy">
+          <p class="eyebrow">Support us</p>
+          <h2>Classic horror is better when it can be shared.</h2>
+          <p>
+            Depmify is a fan developer focused on bringing classic survival horror
+            experiences closer to players who want to explore them together. Alongside
+            RESIDENT EVIL: SHATTERED, Depmify also develops Silent Hill: United, an
+            unofficial multiplayer project for Silent Hill 1 built around preserving
+            atmosphere while adding shared presence.
+          </p>
+          <p>
+            Optional support helps with testing time, public builds, documentation,
+            and the long process of turning strange survival-horror experiments into
+            something people can actually play with friends.
+          </p>
+        </div>
+        <div class="support-panel">
+          <span class="support-kicker">Optional donations</span>
+          <p>No original game assets are sold or distributed. Support is for the time spent developing, testing, and maintaining fan project releases.</p>
+          <a class="button primary" href="https://buymeacoffee.com/depmify">Support Depmify</a>
+          <a class="support-link" href="https://github.com/Depmify/Silent-Hill-United-Public-">Silent Hill: United</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>RESIDENT EVIL is a trademark of Capcom. RESIDENT EVIL: SHATTERED is an unofficial fan project and is not affiliated with, endorsed by, sponsored by, or approved by Capcom.</p>
+      <a href="https://github.com/Depmify/Resident-Evil-SHATTERED">GitHub Repository</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
