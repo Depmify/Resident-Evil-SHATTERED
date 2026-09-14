@@ -15,7 +15,7 @@ This public repository is used for public test builds, screenshots, installation
 </p>
 
 <p align="center">
-  <strong>Early public test build with experimental split-screen support.</strong><br>
+  <strong>v0.0.2 public test build with expanded menus, gameplay, and experimental multiplayer modes.</strong><br>
   SHATTERED is still in active development, and public builds may contain incomplete behavior, bugs, and compatibility issues.
 </p>
 
@@ -27,7 +27,9 @@ The current public release is intended for testing the launcher, basic startup f
 
 ## Downloads
 
-The first public test build, **v0.0.1**, is available on the repository's **Releases** page.
+The current public test build, **v0.0.2**, is available on the repository's **Releases** page.
+
+The multiplayer menu is visible but not functional yet. SplitScreen is currently the only working multiplayer mode, and the public package contains only the launcher and client.
 
 > No original Resident Evil game assets are included in this repository or in public releases.
 

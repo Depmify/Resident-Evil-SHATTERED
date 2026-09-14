@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="RESIDENT EVIL: SHATTERED is an early closed-source fan project with public test builds and experimental split-screen support.">
+    <meta name="description" content="RESIDENT EVIL: SHATTERED v0.0.2 is an early public test build with expanded menus, cooperative play, experimental Versus and Tyrant Battle content, and SplitScreen support.">
     <meta name="theme-color" content="#120f0f">
     <title>RESIDENT EVIL: SHATTERED</title>
     <link rel="stylesheet" href="styles.css">
@@ -20,6 +20,7 @@
       <nav class="nav-links" aria-label="Page sections">
         <a href="#why">Why</a>
         <a href="#status">Status</a>
+        <a href="#changes">What's New</a>
         <a href="#screens">Screens</a>
         <a href="#community">Discord</a>
         <a href="#support">Support</a>
@@ -35,17 +36,19 @@
           <span class="perspective-label" data-perspective-label>Perspective A</span>
         </div>
         <div class="hero-content">
-          <p class="eyebrow">Early public test build</p>
+          <p class="eyebrow">v0.0.2 pre-release</p>
           <h1 class="title-logo" id="hero-title" aria-label="Resident Evil: Shattered">
             <span class="title-main">RESIDENT EVIL</span>
             <span class="title-sub">SHATTERED</span>
           </h1>
           <p class="hero-copy">
-            A Resident Evil project built to share classic survival horror with
-            your friends through experimental split-screen support.
+            A Resident Evil project expanding classic survival horror with a
+            larger playable test build, shared SplitScreen sessions, Versus
+            experiments, and a dedicated Tyrant Battle encounter.
           </p>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.0.1">Download v0.0.1</a>
+            <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.0.2">Download v0.0.2</a>
+            <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.0.2">Read changelog</a>
             <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/INSTALL.md">Installation Guide</a>
           </div>
         </div>
@@ -54,7 +57,7 @@
       <section class="notice-band" aria-label="Important notices">
         <p>No original Resident Evil game assets are included.</p>
         <p>Users must provide their own legally obtained supported game data.</p>
-        <p>Public builds may contain bugs and incomplete behavior.</p>
+        <p>Launcher and client only; the multiplayer server is not included.</p>
       </section>
 
       <section class="section why" id="why">
@@ -84,11 +87,15 @@
         <div class="status-grid">
           <article class="panel">
             <h3>Available</h3>
-            <p>Public test build v0.0.1 with launcher entry point, basic startup flow, and supported data-layout documentation.</p>
+            <p>Public test build v0.0.2 with expanded menus, room gameplay, new encounters, and a Windows launcher plus client package.</p>
           </article>
           <article class="panel">
-            <h3>Experimental</h3>
-            <p>Split-screen support and gameplay behavior are still being explored and may change between builds.</p>
+            <h3>Multiplayer status</h3>
+            <p>The multiplayer menu is visible but not functional yet. SplitScreen is currently the only working multiplayer mode, and no server is included.</p>
+          </article>
+          <article class="panel">
+            <h3>Experimental modes</h3>
+            <p>Versus and Tyrant Battle content is available for testing, while gameplay behavior and access flows may still change between builds.</p>
           </article>
           <article class="panel">
             <h3>Private</h3>
@@ -97,26 +104,48 @@
         </div>
       </section>
 
+      <section class="section changes" id="changes">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">v0.0.2 changelog</p>
+            <h2>What changed for players</h2>
+          </div>
+          <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.0.2">Full release notes</a>
+        </div>
+        <ul class="change-list">
+          <li>The main menu is now a clearer starting point for choosing how you want to play.</li>
+          <li>The options screens offer more complete display, language, frame rate, and control settings.</li>
+          <li>A multiplayer menu is visible, but it is not functional yet; SplitScreen is the only working multiplayer mode.</li>
+          <li>Cooperative play reaches further into the mansion instead of stopping at the initial setup flow.</li>
+          <li>Versus mode turns the mansion into a direct survival-horror competition.</li>
+          <li>Tyrant Battle provides a focused encounter built around facing the Tyrant.</li>
+          <li>Room transitions, shared scenes, rescues, deaths, endings, and the map behave more consistently during longer sessions.</li>
+          <li>Inventory, equipment, ammunition, the bazooka, and the rocket launcher offer more ways to prepare and fight.</li>
+          <li>Crow, Yawn, Tyrant, Cerberus, Plant, and Zombie encounters have been added or refined.</li>
+          <li>Room puzzles, story moments, fixed-camera scenes, animation, music, sound, and controller response have received broader support.</li>
+        </ul>
+      </section>
+
       <section class="section" id="screens">
         <div class="section-heading">
           <p class="eyebrow">Screenshots</p>
-          <h2>Public build preview</h2>
+          <h2>v0.0.2 public build preview</h2>
         </div>
 
         <div class="gallery" data-gallery>
           <div class="gallery-frame is-gameplay" data-gallery-frame>
-            <img data-gallery-image src="assets/splitscreen-gameplay.png" alt="Resident Evil: Shattered split-screen test build">
+            <img data-gallery-image src="assets/splitscreen-gameplay.png" alt="Resident Evil: Shattered v0.0.2 split-screen test build">
           </div>
           <div class="gallery-controls" role="list" aria-label="Screenshot selector">
-            <button class="thumb is-active" type="button" data-image="assets/splitscreen-gameplay.png" data-alt="Resident Evil: Shattered split-screen test build" data-fit="gameplay" aria-pressed="true">
+            <button class="thumb is-active" type="button" data-image="assets/splitscreen-gameplay.png" data-alt="Resident Evil: Shattered v0.0.2 split-screen test build" data-fit="gameplay" aria-pressed="true">
               <img src="assets/splitscreen-gameplay.png" alt="">
               <span>Split-screen</span>
             </button>
-            <button class="thumb" type="button" data-image="assets/launcher-game.png" data-alt="Resident Evil: Shattered launcher" data-fit="interface" aria-pressed="false">
+            <button class="thumb" type="button" data-image="assets/launcher-game.png" data-alt="Resident Evil: Shattered v0.0.2 launcher" data-fit="interface" aria-pressed="false">
               <img src="assets/launcher-game.png" alt="">
               <span>Launcher</span>
             </button>
-            <button class="thumb" type="button" data-image="assets/launcher-inventory.png" data-alt="Resident Evil: Shattered inventory setup" data-fit="interface" aria-pressed="false">
+            <button class="thumb" type="button" data-image="assets/launcher-inventory.png" data-alt="Resident Evil: Shattered v0.0.2 inventory setup" data-fit="interface" aria-pressed="false">
               <img src="assets/launcher-inventory.png" alt="">
               <span>Inventory</span>
             </button>
@@ -129,7 +158,7 @@
           <p class="eyebrow">Setup</p>
           <h2>What the current public build expects</h2>
           <p>
-            SHATTERED v0.0.1 is documented for Windows and a legally obtained copy
+            SHATTERED v0.0.2 is documented for Windows and a legally obtained copy
             of GOG's Resident Evil 1 PC Port. Other versions are not currently
             treated as supported public test targets.
           </p>
@@ -146,7 +175,7 @@
             <p class="eyebrow">Community</p>
             <h2>Join Shattered Team Projects</h2>
           </div>
-          <a class="button primary" href="https://discord.gg/y2947VsHG">Join Discord</a>
+          <a class="button primary" href="https://discord.gg/JEXyszA3nn">Join Discord</a>
         </div>
         <div class="community-grid">
           <article class="panel">
@@ -159,11 +188,11 @@
           </article>
           <article class="panel">
             <h3>Find players</h3>
-            <p>Organize sessions with other users for RESIDENT EVIL: SHATTERED or Silent Hill: United.</p>
+            <p>Organize local SplitScreen sessions with other users for RESIDENT EVIL: SHATTERED or Silent Hill: United.</p>
           </article>
         </div>
         <p class="community-note">
-          The server brings both communities together around multiplayer survival-horror testing, release news, and player coordination.
+          The server brings both communities together around release news, feedback, and player coordination. SHATTERED v0.0.2 does not include an online multiplayer server.
         </p>
       </section>
 
