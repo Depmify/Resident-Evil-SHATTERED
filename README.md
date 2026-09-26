@@ -6,8 +6,8 @@ This public repository is used for public test builds, screenshots, installation
 
 ## Screenshots
 
-| Launcher | Inventory Setup |
-| --- | --- |
+| Launcher                                                                                         | Inventory Setup                                                                                              |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | <img src=".github/assets/launcher-game.png" width="390" alt="Resident Evil: Shattered launcher"> | <img src=".github/assets/launcher-inventory.png" width="390" alt="Resident Evil: Shattered inventory setup"> |
 
 <p align="center">
@@ -27,7 +27,7 @@ The current public release is intended for testing the launcher, basic startup f
 
 ## Downloads
 
-The current public test build, **v0.0.2**, is available on the repository's **Releases** page.
+The current public test build, **v0.0.3**, is available on the repository's **Releases** page.
 
 The multiplayer menu is visible but not functional yet. SplitScreen is currently the only working multiplayer mode, and the public package contains only the launcher and client.
 
