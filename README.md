@@ -15,7 +15,7 @@ This public repository is used for public test builds, screenshots, installation
 </p>
 
 <p align="center">
-  <strong>v0.0.2 public test build with expanded menus, gameplay, and experimental multiplayer modes.</strong><br>
+  <strong>v0.0.3 Alpha build new weapons, refined movement/animations, and first mansion run cooperative gameplay.</strong><br>
   SHATTERED is still in active development, and public builds may contain incomplete behavior, bugs, and compatibility issues.
 </p>
 
