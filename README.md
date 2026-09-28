@@ -6,30 +6,30 @@ This public repository is used for public test builds, screenshots, installation
 
 ## Screenshots
 
-| Launcher | Inventory Setup |
+| Launcher | Game Settings |
 | --- | --- |
-| <img src=".github/assets/launcher-game.png" width="390" alt="Resident Evil: Shattered launcher"> | <img src=".github/assets/launcher-inventory.png" width="390" alt="Resident Evil: Shattered inventory setup"> |
+| <img src="docs/assets/launcher-game.png" width="390" alt="Resident Evil: Shattered launcher"> | <img src="docs/assets/game-settings.png" width="390" alt="Resident Evil: Shattered video and audio settings"> |
 
 <p align="center">
-  <img src=".github/assets/splitscreen-gameplay.png" width="820" alt="Resident Evil: Shattered split-screen test build">
+  <img src="docs/assets/splitscreen-gameplay.png" width="820" alt="Resident Evil: Shattered split-screen gameplay">
 </p>
 
 <p align="center">
-  <strong>v0.0.2 public test build with expanded menus, gameplay, and experimental multiplayer modes.</strong><br>
+  <strong>v0.0.3 public test build with co-op through the first mansion visit, experimental online/LAN, and RE3-inspired movement and weapons.</strong><br>
   SHATTERED is still in active development, and public builds may contain incomplete behavior, bugs, and compatibility issues.
 </p>
 
 ## Project Status
 
-SHATTERED is currently an early public test build.
+SHATTERED is currently an early public test build. The latest build is **v0.0.3**.
 
-The current public release is intended for testing the launcher, basic startup flow, supported game-data layout, and experimental gameplay features. Features may change frequently between builds.
+The current public release adds experimental online/LAN sessions for up to two players and expands the verified co-op route through the first visit to Spencer Mansion, up to the exit to the courtyard. Features may change frequently between builds.
 
 ## Downloads
 
-The current public test build, **v0.0.2**, is available on the repository's **Releases** page.
+The current public test build, **v0.0.3**, is available on the repository's **Releases** page.
 
-The multiplayer menu is visible but not functional yet. SplitScreen is currently the only working multiplayer mode, and the public package contains only the launcher and client.
+Online/LAN multiplayer remains experimental and supports sessions of up to two players. The verified co-op route covers the first Spencer Mansion visit up to the courtyard exit; later areas are not yet adapted or verified. The public package contains the launcher and client; the multiplayer server is not included.
 
 > No original Resident Evil game assets are included in this repository or in public releases.
 

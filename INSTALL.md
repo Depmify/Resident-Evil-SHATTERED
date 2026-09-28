@@ -86,8 +86,7 @@ The launcher expects `SHATTERED.exe` to be next to the launcher or otherwise dis
 
 - **Solo** starts `SHATTERED.exe` directly with no launcher configuration arguments.
 - **SplitScreen** opens the setup flow first, saves launcher settings, then starts `SHATTERED.exe --config "<path-to-launcher-config.json>"`.
-- **Settings** can configure resolution, FPS limit, language, and input mappings.
-- **Inventory** can configure player loadouts before starting a configured session.
+- **Settings** configures general game options, including display, language, and input mappings.
 - Direct room tools rely on the `Stage1` through `Stage7` folders being present under the GOG data root.
 
 Launching `SHATTERED.exe` by itself starts the normal full boot path with default standalone settings.

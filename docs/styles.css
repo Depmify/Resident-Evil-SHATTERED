@@ -164,11 +164,6 @@ a {
   animation: crtFlicker 5.6s steps(2, end) infinite;
 }
 
-.hero-background.is-switching::after {
-  opacity: 0.72;
-  animation: signalPulse 520ms steps(2, end);
-}
-
 .crt-noise {
   position: absolute;
   inset: -18%;
@@ -185,50 +180,14 @@ a {
   animation: noiseDrift 1.45s steps(3, end) infinite;
 }
 
-.perspective-label {
-  position: absolute;
-  z-index: 4;
-  right: clamp(18px, 4vw, 56px);
-  bottom: clamp(18px, 3vw, 40px);
-  padding: 6px 9px;
-  border: 1px solid rgba(196, 161, 95, 0.3);
-  background: rgba(7, 6, 6, 0.5);
-  color: rgba(242, 237, 230, 0.78);
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 0 #050404;
-  transition: opacity 240ms ease, transform 240ms ease;
-}
-
-.hero-background.is-switching .perspective-label {
-  opacity: 0.32;
-  transform: translateY(2px);
-}
-
-.banner-layer {
-  --banner-scale-start: 2.26;
-  --banner-scale-end: 2.34;
-  --banner-drift-duration: 6200ms;
+.hero-video {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
   filter: saturate(0.78) contrast(1.12) brightness(0.9);
-  transform: scale(var(--banner-scale-start));
-  transition:
-    opacity 1100ms ease,
-    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 360ms ease;
-  will-change: opacity, transform;
-}
-
-.hero-background.is-switching .banner-layer {
-  filter: saturate(0.6) contrast(1.35) brightness(0.64) blur(1px);
 }
 
 @keyframes crtFlicker {
@@ -265,55 +224,6 @@ a {
 
   100% {
     transform: translate3d(2%, 1%, 0);
-  }
-}
-
-.banner-layer.is-visible {
-  opacity: 1;
-  animation: cameraDrift var(--banner-drift-duration) ease-in-out forwards;
-}
-
-.banner-layer.is-top {
-  transform-origin: center top;
-}
-
-.banner-layer.is-bottom {
-  transform-origin: center bottom;
-}
-
-.banner-layer.is-full {
-  transform-origin: center center;
-}
-
-@keyframes cameraDrift {
-  from {
-    transform: scale(var(--banner-scale-start));
-  }
-
-  to {
-    transform: scale(var(--banner-scale-end));
-  }
-}
-
-@keyframes signalPulse {
-  0% {
-    opacity: 0.38;
-  }
-
-  22% {
-    opacity: 0.82;
-  }
-
-  42% {
-    opacity: 0.36;
-  }
-
-  66% {
-    opacity: 0.74;
-  }
-
-  100% {
-    opacity: 0.42;
   }
 }
 
@@ -815,31 +725,8 @@ h3 {
     opacity: 0.46;
   }
 
-  .banner-layer {
+  .hero-video {
     filter: saturate(0.78) contrast(1.14) brightness(0.88);
-    --banner-scale-start: 2.34;
-    --banner-scale-end: 2.42;
-    --banner-drift-duration: 5200ms;
-  }
-
-  .banner-layer.is-full {
-    object-fit: contain;
-    --banner-scale-start: 1;
-    --banner-scale-end: 1;
-  }
-
-  .perspective-label {
-    right: 16px;
-    bottom: 14px;
-    font-size: 0.64rem;
-  }
-
-  .banner-layer.is-top {
-    transform-origin: center top;
-  }
-
-  .banner-layer.is-bottom {
-    transform-origin: center bottom;
   }
 
   .crt-noise {
@@ -1056,11 +943,9 @@ h3 {
     scroll-behavior: auto;
   }
 
-  .banner-layer,
   .button,
   .hero-background::after,
-  .crt-noise,
-  .perspective-label {
+  .crt-noise {
     transition: none;
     animation: none;
   }
