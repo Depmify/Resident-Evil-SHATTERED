@@ -1,8 +1,26 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.0 — Jill's Story, From Start to Finish
+
+This release brings Jill's campaign from the Spencer Mansion through its ending, with more of the story playable together in SplitScreen.
+
+### What's New for Players
+
+- Play through Jill's story from beginning to end, including the later areas and the finale.
+- Experience selected cutscenes and story moments together in cooperative SplitScreen.
+- Continue further through the campaign together, with improvements to cooperative encounters, puzzles, interactions, and story progression.
+- Feel gameplay through controller vibration.
+- Enjoy improved movement and controller response during exploration and combat.
+- Start from a refreshed main menu and use an updated launcher to set up the game.
+- See and hear more of the campaign through improvements to story sequences, sound, and the finale.
+
+### Multiplayer Availability
+
+Native online and LAN multiplayer are disabled and blocked until further notice. Cooperative play is available through SplitScreen. For remote play, players can use a third-party tool such as Parsec to share a SplitScreen session; this is not a built-in SHATTERED feature.
+
 ## v0.0.3 — First Mansion Visit Test
 
-This experimental update adds network play and expands the verified co-op route through the first visit to Spencer Mansion.
+This experimental release added network play and expanded the verified co-op route through the first visit to Spencer Mansion.
 
 ### What's Changed
 
@@ -16,7 +34,9 @@ This experimental update adds network play and expands the verified co-op route 
 - Added a full-screen gameplay pause menu and improved launcher settings persistence and controller mapping.
 - Fixed cooperative room transitions, pickups, combat interactions, and scripted sequences.
 
-This is an experimental build. Online and LAN play may still have bugs, disconnections, or synchronization issues.
+At the time, this was an experimental build. Online and LAN play could have bugs, disconnections, or synchronization issues.
+
+The online and LAN modes described in these v0.0.3 notes were later disabled and are not available in v0.1.0.
 
 ## v0.0.2 — Changes Since v0.0.1
 

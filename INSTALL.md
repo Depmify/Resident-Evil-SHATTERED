@@ -80,6 +80,10 @@ Windows is usually case-insensitive, but keeping the folder names close to the l
 5. Start `Resident Evil Launcher.exe`.
 6. Choose **Solo** for a standard launch, or **SplitScreen** to configure a two-player session before launch.
 
+## Cooperative and Remote Play
+
+Cooperative play is available through SplitScreen. Native online and LAN multiplayer are disabled until further notice. To play remotely, you may use a third-party tool such as Parsec to share a SplitScreen session. Remote play through these tools is not built into SHATTERED.
+
 ## Launcher Behavior
 
 The launcher expects `SHATTERED.exe` to be next to the launcher or otherwise discoverable from the release folder.

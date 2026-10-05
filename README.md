@@ -1,8 +1,8 @@
 # RESIDENT EVIL: SHATTERED
 
-**RESIDENT EVIL: SHATTERED** is an early closed-source fan project built around sharing the classic Resident Evil survival-horror experience with friends.
+**RESIDENT EVIL: SHATTERED** is a closed-source fan project that brings a new way to experience classic Resident Evil survival horror, including cooperative SplitScreen play.
 
-This public repository is used for public test builds, screenshots, installation notes, issue tracking, and community-facing documentation. The active source code, internal tools, and development assets are maintained privately.
+This public repository is used for public releases, screenshots, installation notes, issue tracking, and community-facing documentation. The active source code, internal tools, and development assets are maintained privately.
 
 ## Screenshots
 
@@ -15,21 +15,21 @@ This public repository is used for public test builds, screenshots, installation
 </p>
 
 <p align="center">
-  <strong>v0.0.3 public test build with co-op through the first mansion visit, experimental online/LAN, and RE3-inspired movement and weapons.</strong><br>
-  SHATTERED is still in active development, and public builds may contain incomplete behavior, bugs, and compatibility issues.
+  <strong>v0.1.0 follows Jill's story from the Spencer Mansion through its ending, with selected co-op story scenes, controller vibration, and an updated launcher.</strong><br>
+  Cooperative play is available through SplitScreen. Native online and LAN multiplayer are disabled until further notice.
 </p>
 
 ## Project Status
 
-SHATTERED is currently an early public test build. The latest build is **v0.0.3**.
+SHATTERED **v0.1.0** is the latest public release.
 
-The current public release adds experimental online/LAN sessions for up to two players and expands the verified co-op route through the first visit to Spencer Mansion, up to the exit to the courtyard. Features may change frequently between builds.
+Jill's campaign can be played from beginning to end. Selected cutscenes and story moments are available in co-op, alongside controller vibration, a refreshed main menu, and an updated launcher.
 
 ## Downloads
 
-The current public test build, **v0.0.3**, is available on the repository's **Releases** page.
+Download **v0.1.0** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.0).
 
-Online/LAN multiplayer remains experimental and supports sessions of up to two players. The verified co-op route covers the first Spencer Mansion visit up to the courtyard exit; later areas are not yet adapted or verified. The public package contains the launcher and client; the multiplayer server is not included.
+Cooperative play is available through **SplitScreen**. Native online and LAN multiplayer are disabled and blocked until further notice. For remote play, you can use a third-party tool such as Parsec to share a SplitScreen session; remote play is not a built-in SHATTERED feature.
 
 > No original Resident Evil game assets are included in this repository or in public releases.
 
@@ -73,5 +73,6 @@ This project does not distribute original game assets, copyrighted data files, o
 ## Links
 
 - [Installation Guide](INSTALL.md)
-- [Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
+- [v0.1.0 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.0)
+- [All Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)
