@@ -80,9 +80,11 @@ Windows is usually case-insensitive, but keeping the folder names close to the l
 5. Start `Resident Evil Launcher.exe`.
 6. Choose **Solo** for a standard launch, or **SplitScreen** to configure a two-player session before launch.
 
-## Cooperative and Remote Play
+## Cooperative Play and Mods
 
-Cooperative play is available through SplitScreen. Native online and LAN multiplayer are disabled until further notice. To play remotely, you may use a third-party tool such as Parsec to share a SplitScreen session. Remote play through these tools is not built into SHATTERED.
+Online co-op is available throughout the complete campaign in v0.1.5. SplitScreen is also supported. See the [v0.1.5 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5) for the current release details.
+
+SHATTERED v0.1.5 supports compatible mods. Check each mod's instructions and compatibility information before installing it.
 
 ## Launcher Behavior
 

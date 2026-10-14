@@ -6,30 +6,30 @@ This public repository is used for public releases, screenshots, installation no
 
 ## Screenshots
 
-| Launcher | Game Settings |
-| --- | --- |
-| <img src="docs/assets/launcher-game.png" width="390" alt="Resident Evil: Shattered launcher"> | <img src="docs/assets/game-settings.png" width="390" alt="Resident Evil: Shattered video and audio settings"> |
+| Launcher | Game Settings | Online Character Select |
+| --- | --- | --- |
+| <img src="docs/assets/launcher-game.png" width="300" alt="Resident Evil: Shattered launcher"> | <img src="docs/assets/game-settings.png" width="300" alt="Resident Evil: Shattered game settings"> | <img src="docs/assets/online-character-select.png" width="300" alt="Resident Evil: Shattered online character select"> |
 
 <p align="center">
   <img src="docs/assets/splitscreen-gameplay.png" width="820" alt="Resident Evil: Shattered split-screen gameplay">
 </p>
 
 <p align="center">
-  <strong>v0.1.0 follows Jill's story from the Spencer Mansion through its ending, with selected co-op story scenes, controller vibration, and an updated launcher.</strong><br>
-  Cooperative play is available through SplitScreen. Native online and LAN multiplayer are disabled until further notice.
+  <strong>v0.1.5 lets you complete the campaign online with a friend, adds support for compatible mods, and brings new enemies and combat options.</strong><br>
+  Play together online or through SplitScreen.
 </p>
 
 ## Project Status
 
-SHATTERED **v0.1.0** is the latest public release.
+SHATTERED **v0.1.5** is the latest public release.
 
-Jill's campaign can be played from beginning to end. Selected cutscenes and story moments are available in co-op, alongside controller vibration, a refreshed main menu, and an updated launcher.
+Play through the complete campaign online with a friend. The release also adds compatible mod support, Resident Evil 2 zombies, Resident Evil 3 weapons and dodge, an unlockable skin, and numerous bug fixes.
 
 ## Downloads
 
-Download **v0.1.0** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.0).
+Download **v0.1.5** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5).
 
-Cooperative play is available through **SplitScreen**. Native online and LAN multiplayer are disabled and blocked until further notice. For remote play, you can use a third-party tool such as Parsec to share a SplitScreen session; remote play is not a built-in SHATTERED feature.
+Cooperative play is available online and through **SplitScreen**. Online co-op supports the complete campaign.
 
 > No original Resident Evil game assets are included in this repository or in public releases.
 
@@ -73,6 +73,6 @@ This project does not distribute original game assets, copyrighted data files, o
 ## Links
 
 - [Installation Guide](INSTALL.md)
-- [v0.1.0 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.0)
+- [v0.1.5 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5)
 - [All Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)

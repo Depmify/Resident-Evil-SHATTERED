@@ -1,5 +1,19 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.5 — Complete Online Co-op, Mods & New Combat
+
+SHATTERED v0.1.5 brings online co-op to the complete campaign. Play through the story with a friend from beginning to end, use compatible mods, and face a new range of enemies and weapons inspired by Resident Evil 2 and Resident Evil 3.
+
+### What's New for Players
+
+- Play through the complete campaign online with a friend, from the opening to the ending.
+- Use compatible mods with SHATTERED.
+- Face Resident Evil 2 zombies, replacing the original Resident Evil 1 zombies.
+- Use weapons from Resident Evil 3, including the Western Custom, Benelli M3, and Eagle.
+- Evade enemy attacks with the Resident Evil 3 dodge.
+- Unlock a special skin by completing the game for the first time.
+- Benefit from numerous bug fixes and gameplay improvements.
+
 ## v0.1.0 — Jill's Story, From Start to Finish
 
 This release brings Jill's campaign from the Spencer Mansion through its ending, with more of the story playable together in SplitScreen.
@@ -36,7 +50,7 @@ This experimental release added network play and expanded the verified co-op rou
 
 At the time, this was an experimental build. Online and LAN play could have bugs, disconnections, or synchronization issues.
 
-The online and LAN modes described in these v0.0.3 notes were later disabled and are not available in v0.1.0.
+The online and LAN modes described in these v0.0.3 notes were later disabled and were not available in v0.1.0. Online co-op is available again in v0.1.5; see that release's notes for the current feature set.
 
 ## v0.0.2 — Changes Since v0.0.1
 
