@@ -82,9 +82,9 @@ Windows is usually case-insensitive, but keeping the folder names close to the l
 
 ## Cooperative Play and Mods
 
-Online co-op is available throughout the complete campaign in v0.1.5. SplitScreen is also supported. See the [v0.1.5 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5) for the current release details.
+Online co-op is available throughout the complete campaign in v0.1.6. SplitScreen is also supported. See the [v0.1.6 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.6) for the current release details.
 
-SHATTERED v0.1.5 supports compatible mods. Check each mod's instructions and compatibility information before installing it.
+SHATTERED v0.1.6 includes improved support for compatible mods. Check each mod's instructions and compatibility information before installing it.
 
 ## Launcher Behavior
 

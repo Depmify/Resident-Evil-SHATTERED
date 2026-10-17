@@ -1,5 +1,18 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.6 — Harassment Difficulty & Multiplayer Improvements
+
+SHATTERED v0.1.6 adds a new Story Mode difficulty, brings new threats into the game, and improves the multiplayer and mod experience. This update also includes fixes for several multiplayer issues.
+
+### What's New for Players
+
+- Take on Story Mode's new Harassment difficulty.
+- Find the Benelli in Richard's room.
+- Encounter new appearances from Mr. X and Nemesis.
+- Use improved support for compatible mods.
+- Navigate the multiplayer menus more easily.
+- Benefit from fixes for several multiplayer issues.
+
 ## v0.1.5 — Complete Online Co-op, Mods & New Combat
 
 SHATTERED v0.1.5 brings online co-op to the complete campaign. Play through the story with a friend from beginning to end, use compatible mods, and face a new range of enemies and weapons inspired by Resident Evil 2 and Resident Evil 3.

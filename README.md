@@ -15,19 +15,19 @@ This public repository is used for public releases, screenshots, installation no
 </p>
 
 <p align="center">
-  <strong>v0.1.5 lets you complete the campaign online with a friend, adds support for compatible mods, and brings new enemies and combat options.</strong><br>
+  <strong>v0.1.6 adds a new Story Mode difficulty, new threats, improved mod support, and multiplayer improvements.</strong><br>
   Play together online or through SplitScreen.
 </p>
 
 ## Project Status
 
-SHATTERED **v0.1.5** is the latest public release.
+SHATTERED **v0.1.6** is the latest public release.
 
-Play through the complete campaign online with a friend. The release also adds compatible mod support, Resident Evil 2 zombies, Resident Evil 3 weapons and dodge, an unlockable skin, and numerous bug fixes.
+Take on Story Mode's new Harassment difficulty, find the Benelli in Richard's room, and encounter new appearances from Mr. X and Nemesis. The update also improves support for compatible mods and multiplayer navigation, with fixes for several multiplayer issues. Online co-op still covers the complete campaign.
 
 ## Downloads
 
-Download **v0.1.5** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5).
+Download **v0.1.6** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.6).
 
 Cooperative play is available online and through **SplitScreen**. Online co-op supports the complete campaign.
 
@@ -73,6 +73,6 @@ This project does not distribute original game assets, copyrighted data files, o
 ## Links
 
 - [Installation Guide](INSTALL.md)
-- [v0.1.5 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.5)
+- [v0.1.6 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.6)
 - [All Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)
