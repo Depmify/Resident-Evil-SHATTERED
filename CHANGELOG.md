@@ -1,5 +1,20 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.7 — Any PC Version & Up to Four Players Online
+
+SHATTERED v0.1.7 opens the game to every existing PC release of Resident Evil 1, including the GOG, Steam, and Sourcenext versions. Online sessions can now hold up to four players, mod features have been improved, and this update includes a range of fixes.
+
+### What's New for Players
+
+- Play with your GOG, Steam, or Sourcenext copy of Resident Evil 1. Essentially any existing PC version is now supported. Select your game installation in the launcher.
+- Play online with up to four players.
+- Use improved mod features.
+- Benefit from various fixes.
+
+### Experimental: Three or Four Players
+
+Online sessions with more than two players are **experimental**. With three or four players, the campaign can be played up to the laboratories but **cannot be completed yet**. To play the complete campaign online, use a two-player session.
+
 ## v0.1.6 — Harassment Difficulty & Multiplayer Improvements
 
 SHATTERED v0.1.6 adds a new Story Mode difficulty, brings new threats into the game, and improves the multiplayer and mod experience. This update also includes fixes for several multiplayer issues.

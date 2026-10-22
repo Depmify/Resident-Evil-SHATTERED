@@ -4,19 +4,20 @@ This guide explains how to set up **RESIDENT EVIL: SHATTERED** from a public rel
 
 SHATTERED is a closed-source fan project. Public releases do **not** include original Resident Evil game assets, copyrighted data files, or commercial game content. You must provide your own legally obtained copy of the required game data.
 
-## Supported Version
+## Supported Versions
 
-This build is expected to be used with **GOG's Resident Evil 1 PC Port**.
+Starting with v0.1.7, SHATTERED supports essentially **any existing PC version of Resident Evil 1**, including:
 
-> Please also note that this build has only been tested on GOG's RE1 PC Port. Therefore, any issue reports that are using another version won't be taken in account until other versions of the game (Like PSX, Director's Cut, Dualshock, original 1997 PC Port) are officially supported.
+- GOG
+- Steam
+- Sourcenext
 
 Unsupported versions currently include:
 
 - PlayStation / PSX releases
 - Director's Cut
 - DualShock Edition
-- Original 1997 PC Port
-- Any other non-GOG data layout
+- Any other non-PC release
 
 Reports using unsupported versions may be closed or deferred until those versions are officially supported.
 
@@ -24,67 +25,42 @@ Reports using unsupported versions may be closed or deferred until those version
 
 - Windows
 - A public SHATTERED release package
-- A legally obtained copy of GOG's Resident Evil 1 PC Port
+- A legally obtained PC copy of Resident Evil 1 (GOG, Steam, Sourcenext, or another existing PC version)
 - The required .NET Desktop Runtime if the release is framework-dependent
 
 If the release notes say the build is self-contained, you do not need to install .NET separately. If it is framework-dependent, install the **x86 .NET Desktop Runtime 10.0**.
 
 ## Expected Folder Layout
 
-Place the launcher, the game executable, and the game data in one SHATTERED folder.
-
-Recommended layout:
+Extract the release into its own SHATTERED folder. You do not need to copy your game data into it: the launcher points to your existing Resident Evil 1 installation.
 
 ```text
 RESIDENT EVIL SHATTERED/
   Resident Evil Launcher.exe
   SHATTERED.exe
   launcher-config.json        (created after saving launcher settings)
-  Game/
-    GOG PC Port/
-      USA/
-        Data/
-          bio_card.dat
-        Stage1/
-        Stage2/
-        Stage3/
-        Stage4/
-        Stage5/
-        Stage6/
-        Stage7/
-        Movie/
-        Sound/
-        Voice/
-        enemy/
-        ITEM_M1/
-        Item_m2/
-        Effspr/
 ```
-
-The most important file check is:
-
-```text
-Game/GOG PC Port/USA/Data/bio_card.dat
-```
-
-If that file is not present, SHATTERED will not be able to find the game data root.
-
-Windows is usually case-insensitive, but keeping the folder names close to the layout above makes troubleshooting easier.
 
 ## Setup Steps
 
 1. Download the latest SHATTERED release from the [Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases) page.
 2. Extract the release into a dedicated folder, for example `RESIDENT EVIL SHATTERED`.
-3. Copy your GOG Resident Evil 1 PC Port game data into `Game/GOG PC Port/USA`.
-4. Confirm that `Game/GOG PC Port/USA/Data/bio_card.dat` exists.
-5. Start `Resident Evil Launcher.exe`.
-6. Choose **Solo** for a standard launch, or **SplitScreen** to configure a two-player session before launch.
+3. Start `Resident Evil Launcher.exe`.
+4. In the launcher, select your Resident Evil 1 PC installation folder (GOG, Steam, Sourcenext, or another PC version).
+5. Choose **Solo** for a standard launch, **SplitScreen** to configure a two-player local session, or play **Online**.
 
 ## Cooperative Play and Mods
 
-Online co-op is available throughout the complete campaign in v0.1.6. SplitScreen is also supported. See the [v0.1.6 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.6) for the current release details.
+SplitScreen supports two players on one PC.
 
-SHATTERED v0.1.6 includes improved support for compatible mods. Check each mod's instructions and compatibility information before installing it.
+Online sessions support up to **four players**:
+
+- **Two players:** the complete campaign can be played online from beginning to end.
+- **Three or four players (experimental):** the campaign can be played up to the laboratories, but it **cannot be completed yet**. Expect bugs and synchronization issues.
+
+See the [v0.1.7 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.7) for the current release details.
+
+SHATTERED v0.1.7 includes improved mod features. Check each mod's instructions and compatibility information before installing it.
 
 ## Launcher Behavior
 
@@ -93,7 +69,7 @@ The launcher expects `SHATTERED.exe` to be next to the launcher or otherwise dis
 - **Solo** starts `SHATTERED.exe` directly with no launcher configuration arguments.
 - **SplitScreen** opens the setup flow first, saves launcher settings, then starts `SHATTERED.exe --config "<path-to-launcher-config.json>"`.
 - **Settings** configures general game options, including display, language, and input mappings.
-- Direct room tools rely on the `Stage1` through `Stage7` folders being present under the GOG data root.
+- The game installation selected in the launcher is used as the game data root. Direct room tools rely on the `Stage1` through `Stage7` folders being present in that installation.
 
 Launching `SHATTERED.exe` by itself starts the normal full boot path with default standalone settings.
 
@@ -110,25 +86,15 @@ Make sure `SHATTERED.exe` is in the release folder next to `Resident Evil Launch
 
 ### `Could not locate Game\JPN`
 
-Some internal messages may still use the older `Game\JPN` wording. For the GOG setup, this usually means SHATTERED could not find the game data root. Check that this file exists:
-
-```text
-Game/GOG PC Port/USA/Data/bio_card.dat
-```
+Some internal messages may still use the older `Game\JPN` wording. This usually means SHATTERED could not find the game data root. Open the launcher and check that the selected game installation is the root folder of your Resident Evil 1 PC installation.
 
 ### Black screen, missing title screen, missing movies, or room load failures
 
-Check that the copied GOG data includes the expected `Data`, `Movie`, `Sound`, `Voice`, `Stage*`, `enemy`, `ITEM_M1`, `Item_m2`, and `Effspr` folders.
+Check that the selected game installation is complete and includes the expected `Data`, `Movie`, `Sound`, `Voice`, `Stage*`, `enemy`, `ITEM_M1`, `Item_m2`, and `Effspr` folders.
 
 ### Empty room catalog in the launcher
 
-The launcher room catalog checks the GOG path below and expects `Stage1` through `Stage7` folders:
-
-```text
-Game/GOG PC Port/USA
-```
-
-If the data is placed somewhere else, normal runtime discovery may still find some files, but launcher room selection can be incomplete.
+The launcher room catalog expects `Stage1` through `Stage7` folders inside the selected game installation. Check that the launcher points to the root of your installation and not to a subfolder.
 
 ### Crashes or startup errors
 
@@ -145,12 +111,14 @@ When opening an issue, include:
 
 - SHATTERED build or release version
 - Windows version
-- Confirmation that you are using GOG's Resident Evil 1 PC Port
-- Whether you used Solo or SplitScreen
+- Which PC version of Resident Evil 1 you are using (GOG, Steam, Sourcenext, etc.)
+- Whether you used Solo, SplitScreen, or Online, and how many players were in the session
 - Relevant launcher settings or `launcher-config.json`
 - Room, character, loadout, or direct-room setup used
 - Steps to reproduce
 - Screenshots, video, or logs when available
+
+Issues in three- or four-player online sessions are welcome, but keep in mind that this mode is experimental and cannot reach the ending yet.
 
 Issue reports using unsupported game versions will not be prioritized until those versions are officially supported.
 
