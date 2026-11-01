@@ -58,9 +58,9 @@ Online sessions support up to **four players**:
 - **Two players:** the complete campaign can be played online from beginning to end.
 - **Three or four players (experimental):** the campaign can be played up to the laboratories, but it **cannot be completed yet**. Expect bugs and synchronization issues.
 
-See the [v0.1.7 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.7) for the current release details.
+See the [v0.1.8 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8) for the current release details.
 
-SHATTERED v0.1.7 includes improved mod features. Check each mod's instructions and compatibility information before installing it.
+With SHATTERED v0.1.8, players with different mods installed can start a round together. Check each mod's instructions and compatibility information before installing it.
 
 ## Launcher Behavior
 

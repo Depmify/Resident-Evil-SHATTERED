@@ -1,5 +1,31 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.8 — Classic Mode, New Inventory Style & Smoother Co-op
+
+SHATTERED v0.1.8 adds Classic Mode, a Silent Hill 4-style inventory, new zombies and a more dangerous Mr. X. Online play also feels more responsive, and this update includes a range of fixes.
+
+### What's New for Players
+
+- Play Classic Mode, built on the original game's rules.
+- Choose a new Silent Hill 4 inventory style. In co-op, each player picks their own.
+- Turn on analog movement, set separately for each player.
+- Face Mr. X with new movement and attacks.
+- Meet new zombie appearances, including female researchers.
+- Turn on soft shadows in the options.
+- Visit the new Credits screen from the main menu.
+- Enjoy more responsive movement when joining someone else's game.
+
+### Fixes
+
+- See where every player is on the map, even with four players.
+- Read every page of a File together in co-op.
+- Start a round even when players have different mods installed.
+- Your shots now connect properly with Nemesis.
+- Fewer situations where a Tyrant leaves you frozen in place.
+- The opening with Barry and the first zombie now plays out correctly in single player.
+- Fewer crashes during movies and door transitions.
+- Various other fixes.
+
 ## v0.1.7 — Any PC Version & Up to Four Players Online
 
 SHATTERED v0.1.7 opens the game to every existing PC release of Resident Evil 1, including the GOG, Steam, and Sourcenext versions. Online sessions can now hold up to four players, mod features have been improved, and this update includes a range of fixes.

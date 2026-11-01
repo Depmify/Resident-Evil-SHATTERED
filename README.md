@@ -15,21 +15,21 @@ This public repository is used for public releases, screenshots, installation no
 </p>
 
 <p align="center">
-  <strong>v0.1.7 supports any PC version of Resident Evil 1 and online sessions of up to four players.</strong><br>
+  <strong>v0.1.8 brings Classic Mode, a Silent Hill 4-style inventory, new zombies and smoother online co-op.</strong><br>
   Play together online or through SplitScreen.
 </p>
 
 ## Project Status
 
-SHATTERED **v0.1.7** is the latest public release.
+SHATTERED **v0.1.8** is the latest public release.
 
-SHATTERED now works with the GOG, Steam, and Sourcenext versions of Resident Evil 1. Essentially any existing PC version is supported. Online sessions can hold up to four players, mod features have been improved, and this update includes various fixes.
+SHATTERED v0.1.8 adds Classic Mode, a Silent Hill 4-style inventory, new zombies and a more dangerous Mr. X. Online play also feels more responsive, and this update includes a range of fixes. SHATTERED works with the GOG, Steam, and Sourcenext versions of Resident Evil 1, and essentially any existing PC version is supported. Online sessions can hold up to four players.
 
 > **Three or four players is experimental.** With more than two players online, the campaign can be played up to the laboratories but cannot be completed yet. Two-player online co-op still covers the complete campaign.
 
 ## Downloads
 
-Download **v0.1.7** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.7).
+Download **v0.1.8** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8).
 
 Cooperative play is available online and through **SplitScreen**. Two-player online co-op supports the complete campaign; three- and four-player online sessions are experimental.
 
@@ -75,6 +75,6 @@ This project does not distribute original game assets, copyrighted data files, o
 ## Links
 
 - [Installation Guide](INSTALL.md)
-- [v0.1.7 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.7)
+- [v0.1.8 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8)
 - [All Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)
