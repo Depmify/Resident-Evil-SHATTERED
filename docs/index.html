@@ -4,229 +4,335 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="RESIDENT EVIL: SHATTERED v0.1.8 adds Classic Mode, a Silent Hill 4-style inventory, new zombies and smoother online co-op, and supports any PC version of Resident Evil 1.">
-    <meta name="theme-color" content="#120f0f">
+    <meta name="theme-color" content="#221e2c">
     <title>RESIDENT EVIL: SHATTERED</title>
+    <link rel="preload" href="kit/re15-small.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="kit/re15-serif.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="Main navigation">
+    <!-- ============================================================ MENU BAR -->
+    <header class="menubar" data-menubar>
       <a class="brand" href="#top" aria-label="RESIDENT EVIL: SHATTERED home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-logo">
-          <span>Resident Evil</span>
-          <span>Shattered</span>
-        </span>
+        <img class="px" src="kit/rivet.png" alt="">
+        <span class="serif brand-name">Resident Evil</span>
+        <span class="brand-sub">SHATTERED</span>
       </a>
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="#why">Why</a>
-        <a href="#status">Status</a>
-        <a href="#changes">What's New</a>
-        <a href="#screens">Screens</a>
-        <a href="#community">Discord</a>
-        <a href="#support">Support</a>
+      <nav class="menus" aria-label="Site">
+        <div class="menu" data-menu>
+          <button type="button" class="menu-title" aria-expanded="false">PLAY</button>
+          <div class="menu-list" role="menu">
+            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><span>Download v0.1.8</span><kbd>ZIP</kbd></a>
+            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases"><span>All releases</span><kbd>GITHUB</kbd></a>
+            <hr>
+            <a role="menuitem" href="#setup"><span>How to install</span><kbd>3 STEPS</kbd></a>
+            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/INSTALL.md"><span>Full installation guide</span><kbd>MD</kbd></a>
+            <hr>
+            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/issues"><span>Report an issue</span><kbd>ISSUES</kbd></a>
+          </div>
+        </div>
+        <a class="menu-title" href="#news" data-spy="news">WHAT'S NEW</a>
+        <a class="menu-title" href="#modes" data-spy="modes">MODES</a>
+        <a class="menu-title" href="#media" data-spy="media">MEDIA</a>
+        <a class="menu-title" href="#setup" data-spy="setup">SETUP</a>
+        <a class="menu-title" href="#why" data-spy="why">WHY</a>
+        <div class="menu" data-menu>
+          <button type="button" class="menu-title" aria-expanded="false" data-spy="community">COMMUNITY</button>
+          <div class="menu-list" role="menu">
+            <a role="menuitem" href="https://discord.gg/JEXyszA3nn"><span>Join the Discord</span><kbd>DISCORD</kbd></a>
+            <a role="menuitem" href="https://buymeacoffee.com/depmify"><span>Support Depmify</span><kbd>DONATE</kbd></a>
+            <hr>
+            <a role="menuitem" href="https://github.com/Depmify/Silent-Hill-United-Public-"><span>Silent Hill: United</span><kbd>PROJECT</kbd></a>
+            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED"><span>GitHub repository</span><kbd>REPO</kbd></a>
+          </div>
+        </div>
       </nav>
+      <div class="menubar-right">
+        <span class="muted">PUBLIC RELEASE</span>
+        <span class="chip chip-ink">v0.1.8</span>
+        <a class="btn btn-go" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD</a>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-background">
-          <video class="hero-video" data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/shattered-intro-poster.jpg" aria-hidden="true" tabindex="-1">
-            <source src="assets/shattered-intro-v0.0.4.webm" type="video/webm">
-          </video>
-          <span class="crt-noise"></span>
+      <!-- ============================================================ HERO: the status screen -->
+      <section class="hero" aria-label="RESIDENT EVIL: SHATTERED">
+        <div class="panel hero-movie">
+          <div class="titlebar"><span>INTRO MOVIE</span></div>
+          <div class="screen">
+            <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/shattered-intro-poster.jpg" aria-label="SHATTERED intro movie">
+              <source src="assets/shattered-intro-v0.0.4.webm" type="video/webm">
+            </video>
+            <span class="scanlines" aria-hidden="true"></span>
+          </div>
+          <div class="screen-bar">
+            <span class="chip">PLAY</span>
+            <span class="muted">SHATTERED intro  -  v0.0.4  -  loop</span>
+            <button type="button" class="btn btn-small" data-video-toggle>PAUSE</button>
+          </div>
         </div>
-        <div class="hero-content">
-          <p class="eyebrow">v0.1.8 public release</p>
-          <h1 class="title-logo" id="hero-title" aria-label="Resident Evil: Shattered">
-            <span class="title-main">RESIDENT EVIL</span>
-            <span class="title-sub">SHATTERED</span>
-          </h1>
-          <p class="hero-copy">
-            SHATTERED v0.1.8 brings Classic Mode, a Silent Hill 4-style inventory,
-            new zombies and smoother online co-op. Bring your GOG, Steam, or Sourcenext
-            copy and play alone, in SplitScreen, or online with up to four players.
-          </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8">Download v0.1.8</a>
-            <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/CHANGELOG.md">Read changelog</a>
-            <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/INSTALL.md">Installation Guide</a>
+
+        <div class="hero-side">
+          <div class="panel hero-data">
+            <div class="titlebar"><span>INDIVIDUAL DATA</span></div>
+            <div class="data-card">
+              <h1 class="logo" aria-label="Resident Evil: Shattered">
+                <span class="serif logo-main">RESIDENT EVIL</span>
+                <span class="logo-sub">S H A T T E R E D</span>
+              </h1>
+              <p class="lead">Classic fixed-camera horror, shared. Bring your <b>GOG</b>, <b>Steam</b> or <b>Sourcenext</b> copy and play alone, in <b>SplitScreen</b>, or online with up to <b>four</b> players.</p>
+              <div class="actions">
+                <a class="btn btn-go btn-big" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD v0.1.8 <kbd>WINDOWS</kbd></a>
+                <a class="btn" href="#news">WHAT'S NEW</a>
+                <a class="btn" href="#setup">INSTALL</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel condition">
+            <div class="titlebar"><span>CONDITION</span></div>
+            <div class="ecg" aria-hidden="true">
+              <span class="ecg-label serif">ECG.</span>
+              <svg viewBox="0 0 200 40" preserveAspectRatio="none" class="ecg-svg">
+                <g class="ecg-grid"><path d="M0 8H200M0 16H200M0 24H200M0 32H200"/></g>
+                <g class="ecg-trace"><path d="M0 26H22L26 22L30 26H38L41 30L45 4L49 34L52 26H62L67 20L73 26H100L104 22L108 26H116L119 30L123 4L127 34L130 26H140L145 20L151 26H200L204 22L208 26H216L219 30L223 4L227 34L230 26H240"/></g>
+              </svg>
+            </div>
+            <ul class="cond-list">
+              <li><img class="px" src="kit/word-fine-green.png" alt="Fine"><span>2P online: the complete campaign</span></li>
+              <li><img class="px" src="kit/word-fine-green.png" alt="Fine"><span>2P SplitScreen on one PC</span></li>
+              <li><img class="px" src="kit/word-caution-yellow.png" alt="Caution"><span>3-4P online: up to the laboratories</span></li>
+              <li><img class="px" src="kit/word-danger-orange.png" alt="Danger"><span>Console releases: not supported</span></li>
+            </ul>
+            <p class="cond-note"><span class="chip chip-orange">NOTE</span> No original game assets are included. Bring your own legally obtained PC copy of Resident Evil 1.</p>
           </div>
         </div>
       </section>
 
-      <section class="notice-band" aria-label="Important notices">
-        <p>No original Resident Evil game assets are included.</p>
-        <p>Users must provide their own legally obtained PC copy of Resident Evil 1.</p>
-        <p>Two-player online co-op covers the complete campaign. Three- and four-player sessions are experimental.</p>
+      <!-- ============================================================ WHAT'S NEW: item list + description -->
+      <section class="section" id="news" aria-labelledby="news-title">
+        <div class="section-head">
+          <h2 class="serif" id="news-title">What's New</h2>
+          <div class="section-tools">
+            <span class="muted">RELEASE</span>
+            <div class="dropdown" data-dropdown="version">
+              <button type="button" class="field field-drop" aria-expanded="false"><span data-dropdown-value>v0.1.8</span></button>
+              <div class="dropdown-list" role="listbox"></div>
+            </div>
+            <a class="btn" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/CHANGELOG.md">FULL CHANGELOG</a>
+          </div>
+        </div>
+        <div class="news-grid">
+          <div class="panel">
+            <div class="titlebar"><span>ITEM LIST</span><em data-news-count></em></div>
+            <div class="filter-row">
+              <button type="button" class="chip-toggle is-on" data-news-filter="all">ALL</button>
+              <button type="button" class="chip-toggle" data-news-filter="new">NEW</button>
+              <button type="button" class="chip-toggle" data-news-filter="fix">FIXES</button>
+              <button type="button" class="chip-toggle" data-news-filter="note">NOTES</button>
+            </div>
+            <ol class="item-list" data-news-list></ol>
+          </div>
+          <div class="panel news-detail">
+            <div class="titlebar"><span>DESCRIPTION</span></div>
+            <div class="detail-card">
+              <div class="detail-head">
+                <span class="slot" data-news-icon></span>
+                <div>
+                  <h3 class="serif" data-news-title>v0.1.8</h3>
+                  <p class="muted" data-news-sub></p>
+                </div>
+              </div>
+              <p class="message" data-news-text></p>
+              <p class="detail-summary" data-news-summary></p>
+              <dl class="release-data">
+                <div><dt>DATE</dt><dd data-news-date></dd></div>
+                <div><dt>NEW</dt><dd data-news-new></dd></div>
+                <div><dt>FIXES</dt><dd data-news-fix></dd></div>
+                <div><dt>BUILD</dt><dd>WINDOWS</dd></div>
+              </dl>
+              <a class="btn" data-news-link href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8">OPEN RELEASE PAGE</a>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="section why" id="why">
-        <div class="why-statement">
-          <p class="eyebrow">Why Shattered?</p>
-          <h2>Classic fixed-camera horror was built to isolate you.</h2>
+      <!-- ============================================================ PLAY MODES -->
+      <section class="section" id="modes" aria-labelledby="modes-title">
+        <div class="section-head">
+          <h2 class="serif" id="modes-title">Play Modes</h2>
+          <span class="muted">Every mode needs one legal PC copy of Resident Evil 1 per PC.</span>
         </div>
-        <div class="why-copy">
-          <p>
-            SHATTERED asks what happens when that fear becomes shared: when two
-            players step into the same mansion, split attention across the room,
-            and turn survival-horror tension into a co-op memory.
-          </p>
-          <p>
-            The goal is not to replace the original feeling. It is to preserve the
-            mood, friction, and strange quiet of classic survival horror while
-            opening a new way to experience it with a friend.
-          </p>
-        </div>
-      </section>
-
-      <section class="section split" id="status">
-        <div>
-          <p class="eyebrow">Current state</p>
-          <h2>Any PC copy, more players, the complete campaign playable together.</h2>
-        </div>
-        <div class="status-grid">
-          <article class="panel">
-            <h3>Available</h3>
-            <p>The v0.1.8 public release works with the GOG, Steam, and Sourcenext versions of Resident Evil 1. Just select your installation in the launcher.</p>
+        <div class="modes-grid">
+          <article class="panel mode">
+            <div class="titlebar"><span>SOLO</span></div>
+            <div class="seats"><i class="on">P1</i><i>P2</i><i>P3</i><i>P4</i></div>
+            <img class="px cond" src="kit/word-fine-green.png" alt="Fine">
+            <p>The full campaign alone, with Classic Mode on the original game's rules.</p>
           </article>
-          <article class="panel">
-            <h3>Cooperative play</h3>
-            <p>Play the complete campaign together online with two players, or use SplitScreen.</p>
+          <article class="panel mode">
+            <div class="titlebar"><span>SPLITSCREEN</span></div>
+            <div class="seats"><i class="on">P1</i><i class="on">P2</i><i>P3</i><i>P4</i></div>
+            <img class="px cond" src="kit/word-fine-green.png" alt="Fine">
+            <p>Two players on one PC, side by side, with shared story scenes.</p>
           </article>
-          <article class="panel">
-            <h3>Up to four players</h3>
-            <p>Online sessions now hold up to four players. With more than two, play is experimental and can reach the laboratories, but the campaign cannot be completed yet.</p>
+          <article class="panel mode">
+            <div class="titlebar"><span>ONLINE 2P</span></div>
+            <div class="seats"><i class="on">P1</i><i class="on">P2</i><i>P3</i><i>P4</i></div>
+            <img class="px cond" src="kit/word-fine-green.png" alt="Fine">
+            <p>The complete campaign together, from the opening to the ending.</p>
           </article>
-          <article class="panel">
-            <h3>Private</h3>
-            <p>The active source code, internal tools, research branches, and development assets are maintained outside this repository.</p>
+          <article class="panel mode mode-exp">
+            <div class="titlebar"><span>ONLINE 3-4P</span></div>
+            <div class="seats"><i class="on">P1</i><i class="on">P2</i><i class="on">P3</i><i class="on">P4</i></div>
+            <img class="px cond" src="kit/word-caution-yellow.png" alt="Caution">
+            <p>Experimental. Reaches the laboratories; the ending is not reachable yet.</p>
           </article>
         </div>
       </section>
 
-      <section class="section changes" id="changes">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">v0.1.8 changelog</p>
-            <h2>What changed for players</h2>
-          </div>
-          <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/CHANGELOG.md">Full release notes</a>
+      <!-- ============================================================ MEDIA -->
+      <section class="section" id="media" aria-labelledby="media-title">
+        <div class="section-head">
+          <h2 class="serif" id="media-title">Media</h2>
+          <span class="muted">Public build captures  -  use <img class="px inline" src="kit/chip-l1.png" alt="L1"> <img class="px inline" src="kit/chip-r1.png" alt="R1"> or the arrow keys</span>
         </div>
-        <ul class="change-list">
-          <li>Play Classic Mode, built on the original game's rules.</li>
-          <li>Choose a new Silent Hill 4 inventory style. In co-op, each player picks their own.</li>
-          <li>Face Mr. X with new movement and attacks, and meet new zombie appearances.</li>
-          <li>Turn on analog movement and soft shadows.</li>
-          <li>Enjoy more responsive movement when joining someone else's game.</li>
-          <li>Benefit from fixes for the map, Files, mods, Nemesis, Tyrants and the single-player opening.</li>
-        </ul>
-      </section>
-
-      <section class="section" id="screens">
-        <div class="section-heading">
-          <p class="eyebrow">Screenshots</p>
-          <h2>Public build screenshots</h2>
-        </div>
-
-        <div class="gallery" data-gallery>
-          <div class="gallery-frame is-interface" data-gallery-frame>
-            <img data-gallery-image src="assets/launcher-game.png" alt="Resident Evil: Shattered launcher">
+        <div class="panel media" data-gallery>
+          <div class="titlebar"><span data-gallery-title>SPLITSCREEN</span><em data-gallery-count>1 / 4</em></div>
+          <div class="media-body">
+          <div class="media-stage">
+            <div class="screen media-frame"><img data-gallery-image src="assets/splitscreen-gameplay.png" alt="SplitScreen gameplay"></div>
+            <div class="screen-bar">
+              <button type="button" class="media-nav" data-gallery-prev aria-label="Previous"><img class="px" src="kit/chip-l1.png" alt="">PREV</button>
+              <span class="muted" data-gallery-caption>Two players on one PC, side by side.</span>
+              <button type="button" class="media-nav" data-gallery-next aria-label="Next">NEXT<img class="px" src="kit/chip-r1.png" alt=""></button>
+            </div>
           </div>
-          <div class="gallery-controls" role="list" aria-label="Screenshot selector">
-            <button class="thumb is-active" type="button" data-image="assets/launcher-game.png" data-alt="Resident Evil: Shattered launcher" data-fit="interface" aria-pressed="true">
-              <img src="assets/launcher-game.png" alt="">
-              <span>Launcher</span>
-            </button>
-            <button class="thumb" type="button" data-image="assets/game-settings.png" data-alt="Resident Evil video and audio settings" data-fit="interface" aria-pressed="false">
-              <img src="assets/game-settings.png" alt="">
-              <span>Game Settings</span>
-            </button>
-            <button class="thumb" type="button" data-image="assets/online-character-select.png" data-alt="Online character select with Barry Burton and Jill Valentine" data-fit="interface" aria-pressed="false">
-              <img src="assets/online-character-select.png" alt="">
-              <span>Online Character Select</span>
-            </button>
-            <button class="thumb" type="button" data-image="assets/splitscreen-gameplay.png" data-alt="Resident Evil: Shattered SplitScreen gameplay" data-fit="gameplay" aria-pressed="false">
-              <img src="assets/splitscreen-gameplay.png" alt="">
-              <span>SplitScreen</span>
-            </button>
+          <div class="thumbs" role="list">
+            <button type="button" class="thumb is-active" data-image="assets/splitscreen-gameplay.png" data-title="SPLITSCREEN" data-caption="Two players on one PC, side by side." data-alt="SplitScreen gameplay"><img src="assets/splitscreen-gameplay.png" alt=""><span>SplitScreen</span></button>
+            <button type="button" class="thumb" data-image="assets/online-character-select.png" data-title="ONLINE CHARACTER SELECT" data-caption="Pick your character before an online round." data-alt="Online character select with Barry Burton and Jill Valentine"><img src="assets/online-character-select.png" alt=""><span>Character Select</span></button>
+            <button type="button" class="thumb" data-image="assets/game-settings.png" data-title="GAME SETTINGS" data-caption="Display, frame limit, split orientation and more." data-alt="Video and audio settings"><img src="assets/game-settings.png" alt=""><span>Settings</span></button>
+            <button type="button" class="thumb" data-image="assets/launcher-game.png" data-title="LAUNCHER" data-caption="Select your game folder and start." data-alt="SHATTERED launcher"><img src="assets/launcher-game.png" alt=""><span>Launcher</span></button>
+          </div>
           </div>
         </div>
       </section>
 
-      <section class="section install" id="install">
-        <div>
-          <p class="eyebrow">Setup</p>
-          <h2>What the current public build expects</h2>
-          <p>
-            SHATTERED v0.1.8 runs on Windows with a legally obtained PC copy of
-            Resident Evil 1: GOG, Steam, Sourcenext, or essentially any other
-            existing PC version. Select your game installation in the launcher.
-            Console releases are not currently supported.
-          </p>
+      <!-- ============================================================ SETUP -->
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <div class="section-head">
+          <h2 class="serif" id="setup-title">Setup</h2>
+          <a class="btn" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/INSTALL.md">FULL GUIDE</a>
         </div>
-        <div class="install-actions">
-          <a class="button primary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases">Releases</a>
-          <a class="button secondary" href="https://github.com/Depmify/Resident-Evil-SHATTERED/issues">Report an Issue</a>
+        <div class="setup-grid">
+          <div class="panel">
+            <div class="titlebar"><span>HOW TO PLAY</span></div>
+            <ol class="steps">
+              <li><img class="px digit" src="kit/digit-1.png" alt="1"><div><b>Download</b><span>the latest release from GitHub.</span></div></li>
+              <li><img class="px digit" src="kit/digit-2.png" alt="2"><div><b>Extract</b><span>it to its own folder. Your game data stays where it is.</span></div></li>
+              <li><img class="px digit" src="kit/digit-3.png" alt="3"><div><b>Start the launcher</b><span>and select your Resident Evil 1 PC folder.</span></div></li>
+              <li><img class="px digit" src="kit/digit-4.png" alt="4"><div><b>Choose a mode</b><span>Solo, SplitScreen or Online, then START GAME.</span></div></li>
+            </ol>
+          </div>
+          <div class="panel">
+            <div class="titlebar"><span>SUPPORTED VERSIONS</span></div>
+            <table class="versions">
+              <tr><td>GOG</td><td>PC</td><td><span class="chip">OK</span></td></tr>
+              <tr><td>Steam</td><td>PC</td><td><span class="chip">OK</span></td></tr>
+              <tr><td>Sourcenext</td><td>PC</td><td><span class="chip">OK</span></td></tr>
+              <tr><td>Other PC releases</td><td>PC</td><td><span class="chip">OK</span></td></tr>
+              <tr class="off"><td>PlayStation / Director's Cut</td><td>CONSOLE</td><td><span class="chip chip-off">NO</span></td></tr>
+              <tr class="off"><td>DualShock Edition</td><td>CONSOLE</td><td><span class="chip chip-off">NO</span></td></tr>
+            </table>
+            <p class="note"><span class="chip chip-orange">CAUTION</span> No original game assets are included. Bring your own legally obtained PC copy.</p>
+          </div>
+          <div class="panel setup-help">
+            <div class="titlebar"><span>TROUBLESHOOTING</span></div>
+            <details class="acc" open>
+              <summary>SHATTERED.exe was not found</summary>
+              <p>Keep SHATTERED.exe in the release folder, next to Resident Evil Launcher.exe.</p>
+            </details>
+            <details class="acc">
+              <summary>Black screen, no movies, rooms fail to load</summary>
+              <p>Point the launcher at the root of a complete installation: Data, Movie, Sound, Voice, Stage1-7, enemy, ITEM_M1, Item_m2 and Effspr.</p>
+            </details>
+            <details class="acc">
+              <summary>Empty room catalog in the launcher</summary>
+              <p>The catalog needs Stage1 to Stage7 inside the selected folder. Select the root, not a subfolder.</p>
+            </details>
+            <details class="acc">
+              <summary>Crashes or startup errors</summary>
+              <p>Send launcher-error.log and depmify-runtime.log (next to the executables) with your report.</p>
+            </details>
+            <div class="keys"><span class="chip chip-ink">F3</span><span class="muted">FPS overlay</span><span class="chip chip-ink">F11</span><span class="muted">fullscreen</span></div>
+          </div>
         </div>
       </section>
 
-      <section class="section community" id="community">
-        <div class="section-heading community-heading">
-          <div>
-            <p class="eyebrow">Community</p>
-            <h2>Join Shattered Team Projects</h2>
+      <!-- ============================================================ WHY: an in-game File -->
+      <section class="section" id="why" aria-labelledby="why-title">
+        <div class="panel file" data-file>
+          <div class="titlebar"><span>FILE</span><em data-file-page>1 / 3</em></div>
+          <div class="file-body">
+            <img class="px file-icon" src="kit/folder.png" alt="">
+            <div class="file-text">
+              <h2 class="serif" id="why-title">Why Shattered?</h2>
+              <div class="file-pages">
+                <p class="message is-on">Classic fixed-camera horror was built to isolate you. SHATTERED asks what happens when that fear becomes shared.</p>
+                <p class="message">Two players step into the same mansion, split their attention across the room, and turn survival-horror tension into a co-op memory.</p>
+                <p class="message">The goal is not to replace the original feeling. It is to keep the mood, the friction and the strange quiet, while opening a new way to live it with a friend.</p>
+              </div>
+            </div>
+            <div class="file-nav">
+              <button type="button" class="btn" data-file-prev>PREV</button>
+              <button type="button" class="btn" data-file-next>NEXT</button>
+            </div>
           </div>
-          <a class="button primary" href="https://discord.gg/JEXyszA3nn">Join Discord</a>
+        </div>
+      </section>
+
+      <!-- ============================================================ COMMUNITY + SUPPORT -->
+      <section class="section" id="community" aria-labelledby="community-title">
+        <div class="section-head">
+          <h2 class="serif" id="community-title">Community</h2>
         </div>
         <div class="community-grid">
-          <article class="panel">
-            <h3>Vote on features</h3>
-            <p>Help shape what gets tested next across Depmify's survival-horror projects.</p>
-          </article>
-          <article class="panel">
-            <h3>Talk with Depmify</h3>
-            <p>Follow development, ask questions, share feedback, and report what breaks in public builds.</p>
-          </article>
-          <article class="panel">
-            <h3>Find players</h3>
-            <p>Find friends for online sessions of up to four players, or play together locally through SplitScreen.</p>
-          </article>
+          <div class="panel">
+            <div class="titlebar"><span>SHATTERED TEAM PROJECTS</span><em>DISCORD</em></div>
+            <ul class="feature-list">
+              <li><b>Vote on features</b><span>Shape what gets tested next across Depmify's survival-horror projects.</span></li>
+              <li><b>Talk with Depmify</b><span>Follow development, ask, give feedback and report what breaks.</span></li>
+              <li><b>Find players</b><span>Online sessions of up to four, or a friend for SplitScreen.</span></li>
+            </ul>
+            <a class="btn btn-go btn-big" href="https://discord.gg/JEXyszA3nn"><img class="px" src="kit/tri-right.png" alt="">JOIN THE DISCORD</a>
+          </div>
+          <div class="panel support">
+            <div class="titlebar"><span>SUPPORT</span><em>OPTIONAL</em></div>
+            <p>Depmify is a fan developer bringing classic survival horror to players who want to explore it together, here and in <b>Silent Hill: United</b>, a multiplayer project for Silent Hill 1.</p>
+            <p class="muted">Donations pay for testing time, public builds and documentation. No game assets are sold or distributed.</p>
+            <div class="actions">
+              <a class="btn btn-orange" href="https://buymeacoffee.com/depmify">SUPPORT DEPMIFY</a>
+              <a class="btn" href="https://github.com/Depmify/Silent-Hill-United-Public-">SILENT HILL: UNITED</a>
+            </div>
+          </div>
         </div>
-        <p class="community-note">
-          The Discord brings both communities together around release news, feedback, and player coordination. SHATTERED supports two-player online co-op throughout the complete campaign, experimental three- and four-player sessions, and SplitScreen.
-        </p>
       </section>
 
-      <section class="section support" id="support">
-        <div class="support-copy">
-          <p class="eyebrow">Support us</p>
-          <h2>Classic horror is better when it can be shared.</h2>
-          <p>
-            Depmify is a fan developer focused on bringing classic survival horror
-            experiences closer to players who want to explore them together. Alongside
-            RESIDENT EVIL: SHATTERED, Depmify also develops Silent Hill: United, an
-            unofficial multiplayer project for Silent Hill 1 built around preserving
-            atmosphere while adding shared presence.
-          </p>
-          <p>
-            Optional support helps with testing time, public builds, documentation,
-            and the long process of turning strange survival-horror experiments into
-            something people can actually play with friends.
-          </p>
-        </div>
-        <div class="support-panel">
-          <span class="support-kicker">Optional donations</span>
-          <p>No original game assets are sold or distributed. Support is for the time spent developing, testing, and maintaining fan project releases.</p>
-          <a class="button primary" href="https://buymeacoffee.com/depmify">Support Depmify</a>
-          <a class="support-link" href="https://github.com/Depmify/Silent-Hill-United-Public-">Silent Hill: United</a>
-        </div>
-      </section>
+      <footer class="legal">
+        <p>RESIDENT EVIL is a trademark of Capcom. RESIDENT EVIL: SHATTERED is an unofficial fan project and is not affiliated with, endorsed by, sponsored by, or approved by Capcom.</p>
+        <a href="https://github.com/Depmify/Resident-Evil-SHATTERED">GITHUB REPOSITORY</a>
+      </footer>
     </main>
 
-    <footer class="site-footer">
-      <p>RESIDENT EVIL is a trademark of Capcom. RESIDENT EVIL: SHATTERED is an unofficial fan project and is not affiliated with, endorsed by, sponsored by, or approved by Capcom.</p>
-      <a href="https://github.com/Depmify/Resident-Evil-SHATTERED">GitHub Repository</a>
-    </footer>
+    <!-- ============================================================ STATUS BAR -->
+    <div class="statusbar">
+      <span class="chip">READY</span>
+      <span>v0.1.8</span>
+      <span class="muted">SECTION</span><span data-status-section>TOP</span>
+      <span class="spacer"></span>
+      <span class="muted hide-narrow">L1 R1 media   PREV NEXT file   ESC close</span>
+      <button type="button" class="chip-toggle" data-sound aria-pressed="false">SE OFF</button>
+    </div>
 
     <script src="app.js"></script>
   </body>
