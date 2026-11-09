@@ -1,5 +1,14 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.10
+
+SHATTERED v0.1.10 is an emergency update. It fixes a crash in online games when reaching the room where Forest lies, and a lobby problem that could leave a round stuck when a player had not chosen a character.
+
+### Fixes
+
+- No more crash in online games when reaching the balcony where Forest lies, including when the Tyrant chases you there in Harassment.
+- Starting an online round no longer gets stuck when someone has not chosen a character. Players without a pick now get a free character automatically.
+
 ## v0.1.9 — Voice Chat, New Lobby & Resident Evil 2 Inventory
 
 SHATTERED v0.1.9 lets you talk to your partners over radio voice chat, brings a redesigned online lobby and adds a Resident Evil 2 inventory style. Every control can now be customized, fallen S.T.A.R.S. members rise again, and this update includes a range of fixes.
