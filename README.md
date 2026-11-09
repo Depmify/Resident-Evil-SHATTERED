@@ -6,30 +6,30 @@ This public repository is used for public releases, screenshots, installation no
 
 ## Screenshots
 
-| Launcher | Game Settings | Online Character Select |
+| Launcher | Game Settings | Online |
 | --- | --- | --- |
-| <img src="docs/assets/launcher-game.png" width="300" alt="Resident Evil: Shattered launcher"> | <img src="docs/assets/game-settings.png" width="300" alt="Resident Evil: Shattered game settings"> | <img src="docs/assets/online-character-select.png" width="300" alt="Resident Evil: Shattered online character select"> |
+| <img src="docs/assets/launcher-launch.png" width="216" alt="Resident Evil: Shattered launcher"> | <img src="docs/assets/game-settings.png" width="300" alt="Resident Evil: Shattered game settings"> | <img src="docs/assets/online-1.webp" width="300" alt="Resident Evil: Shattered online co-op with four players"> |
 
 <p align="center">
   <img src="docs/assets/splitscreen-gameplay.png" width="820" alt="Resident Evil: Shattered split-screen gameplay">
 </p>
 
 <p align="center">
-  <strong>v0.1.8 brings Classic Mode, a Silent Hill 4-style inventory, new zombies and smoother online co-op.</strong><br>
+  <strong>v0.1.9 brings radio voice chat, a redesigned online lobby and a Resident Evil 2 inventory style.</strong><br>
   Play together online or through SplitScreen.
 </p>
 
 ## Project Status
 
-SHATTERED **v0.1.8** is the latest public release.
+SHATTERED **v0.1.9** is the latest public release.
 
-SHATTERED v0.1.8 adds Classic Mode, a Silent Hill 4-style inventory, new zombies and a more dangerous Mr. X. Online play also feels more responsive, and this update includes a range of fixes. SHATTERED works with the GOG, Steam, and Sourcenext versions of Resident Evil 1, and essentially any existing PC version is supported. Online sessions can hold up to four players.
+SHATTERED v0.1.9 lets you talk to your partners over radio voice chat, brings a redesigned online lobby and adds a Resident Evil 2 inventory style. Every control can now be customized, fallen S.T.A.R.S. members rise again, and this update includes a range of fixes. SHATTERED works with the GOG, Steam, and Sourcenext versions of Resident Evil 1, and essentially any existing PC version is supported. Online sessions can hold up to four players.
 
 > **Three or four players is experimental.** With more than two players online, the campaign can be played up to the laboratories but cannot be completed yet. Two-player online co-op still covers the complete campaign.
 
 ## Downloads
 
-Download **v0.1.8** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8).
+Download **v0.1.9** from the [GitHub release page](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.9).
 
 Cooperative play is available online and through **SplitScreen**. Two-player online co-op supports the complete campaign; three- and four-player online sessions are experimental.
 
@@ -74,7 +74,8 @@ This project does not distribute original game assets, copyrighted data files, o
 
 ## Links
 
+- [Website](https://depmify.github.io/Resident-Evil-SHATTERED/)
 - [Installation Guide](INSTALL.md)
-- [v0.1.8 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8)
+- [v0.1.9 Release](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.9)
 - [All Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases)
 - [Issues](https://github.com/Depmify/Resident-Evil-SHATTERED/issues)

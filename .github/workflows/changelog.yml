@@ -1,0 +1,42 @@
+name: Add release to CHANGELOG
+
+# When a release is published, its text is added to CHANGELOG.md and committed as
+# Depmify. A release whose version CHANGELOG.md already has is left alone.
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog
+  cancel-in-progress: false
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Add the release to CHANGELOG.md
+        run: python3 .github/scripts/add_release_to_changelog.py
+
+      - name: Commit as Depmify
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git config user.name "Depmify"
+          git config user.email "42193527+Depmify@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "Add $TAG to the changelog"
+          git pull --rebase origin main
+          git push origin HEAD:main

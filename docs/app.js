@@ -1,9 +1,11 @@
 "use strict";
 
 /* ------------------------------------------------------------------ whole-pixel scale
-   The page is authored in RE1.5 pixels. Pick a whole number of DEVICE pixels per
-   RE1.5 pixel (2 at 1080p, 3 at 1440p, 4 at 2160p) and convert it to CSS zoom, so
-   Windows display scaling (125 %, 150 %) cannot blur the fonts. */
+   The page is authored in RE1.5 pixels. Pick the number of DEVICE pixels per
+   RE1.5 pixel (1.5 at 1080p, 2 at 1440p, 3 at 2160p) and convert it to CSS zoom,
+   so Windows display scaling (125 %, 150 %) does not change the size. 1080p uses
+   1.5 by choice (smaller page, slightly softer pixel edges); the others are whole
+   numbers and stay pixel-exact. */
 const root = document.documentElement;
 let scale = 2;
 
@@ -15,14 +17,15 @@ function applyScale() {
   const deviceWidth = cssWidth * dpr;
   // Phones and small windows: the largest whole scale that still leaves ~250 pixels of width.
   scale = cssWidth < 800 ? Math.max(1, Math.floor(deviceWidth / 250))
-    : deviceWidth >= 3400 ? 4 : deviceWidth >= 2400 ? 3 : 2;
+    : deviceWidth >= 3400 ? 3 : deviceWidth >= 2400 ? 2 : 1.5;
   const zoom = scale / dpr;
   root.style.zoom = zoom;
   const logicalW = cssWidth / zoom;
   root.classList.toggle("is-narrow", logicalW < 700);
   root.classList.toggle("is-compact", logicalW < 820);
   root.classList.toggle("is-mid", logicalW < 900);
-  const c = Math.min(scale, 4);
+  // The pointer: one cursor pixel per device pixel up to 1440p, two at 2160p.
+  const c = Math.max(1, Math.floor(deviceWidth / 1920));
   root.style.setProperty("--cur-arrow", `url(kit/cursor-arrow-x${c}.png) 0 0, auto`);
   root.style.setProperty("--cur-hand", `url(kit/cursor-hand-x${c}.png) ${4 * c} 0, pointer`);
   root.style.setProperty("--cur-text", `url(kit/cursor-ibeam-x${c}.png) ${4 * c} ${7 * c}, text`);
@@ -94,79 +97,134 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") { closeMenus(); closeDropdowns(); se("cancel"); }
 });
 
-/* ------------------------------------------------------------------ changelog data (from CHANGELOG.md) */
-const RELEASES = [
-  {
-    v: "v0.1.8", date: "2026-11-01", title: "Classic Mode, New Inventory Style & Smoother Co-op",
-    summary: "Classic Mode, a Silent Hill 4-style inventory, new zombies and a more dangerous Mr. X. Online play feels more responsive.",
-    items: [
-      ["new", "handgun", "Play Classic Mode, built on the original game's rules."],
-      ["new", "spray", "Choose a new Silent Hill 4 inventory style. In co-op, each player picks their own."],
-      ["new", "magnum", "Turn on analog movement, set separately for each player."],
-      ["new", "shotgun", "Face Mr. X with new movement and attacks."],
-      ["new", "knife", "Meet new zombie appearances, including female researchers."],
-      ["new", "spray2", "Turn on soft shadows in the options."],
-      ["new", "handgun", "Visit the new Credits screen from the main menu."],
-      ["new", "magnum", "Enjoy more responsive movement when joining someone else's game."],
-      ["fix", "spray", "See where every player is on the map, even with four players."],
-      ["fix", "spray", "Read every page of a File together in co-op."],
-      ["fix", "spray", "Start a round even when players have different mods installed."],
-      ["fix", "spray", "Your shots now connect properly with Nemesis."],
-      ["fix", "spray", "Fewer situations where a Tyrant leaves you frozen in place."],
-      ["fix", "spray", "The opening with Barry and the first zombie now plays out correctly in single player."],
-      ["fix", "spray", "Fewer crashes during movies and door transitions."],
-    ],
-  },
-  {
-    v: "v0.1.7", date: "2026-10-22", title: "Any PC Version & Up to Four Players Online",
-    summary: "Every existing PC release of Resident Evil 1, including GOG, Steam and Sourcenext. Online sessions hold up to four players.",
-    items: [
-      ["new", "handgun", "Play with your GOG, Steam, or Sourcenext copy. Essentially any existing PC version works: select it in the launcher."],
-      ["new", "shotgun", "Play online with up to four players."],
-      ["new", "magnum", "Use improved mod features."],
-      ["note", "knife", "Three or four players are experimental: the campaign reaches the laboratories but cannot be completed yet."],
-      ["fix", "spray", "Various fixes."],
-    ],
-  },
-  {
-    v: "v0.1.6", date: "2026-10-17", title: "Harassment Difficulty & Multiplayer Improvements",
-    summary: "A new Story Mode difficulty, new threats, and a better multiplayer and mod experience.",
-    items: [
-      ["new", "knife", "Take on Story Mode's new Harassment difficulty."],
-      ["new", "shotgun", "Find the Benelli in Richard's room."],
-      ["new", "magnum", "Encounter new appearances from Mr. X and Nemesis."],
-      ["new", "handgun", "Use improved support for compatible mods."],
-      ["new", "spray2", "Navigate the multiplayer menus more easily."],
-      ["fix", "spray", "Fixes for several multiplayer issues."],
-    ],
-  },
-  {
-    v: "v0.1.5", date: "2026-10-14", title: "Complete Online Co-op, Mods & New Combat",
-    summary: "Online co-op for the complete campaign, compatible mods, and enemies and weapons inspired by RE2 and RE3.",
-    items: [
-      ["new", "handgun", "Play through the complete campaign online with a friend, from the opening to the ending."],
-      ["new", "spray2", "Use compatible mods with SHATTERED."],
-      ["new", "knife", "Face Resident Evil 2 zombies, replacing the original Resident Evil 1 zombies."],
-      ["new", "shotgun", "Use weapons from Resident Evil 3, including the Western Custom, Benelli M3, and Eagle."],
-      ["new", "magnum", "Evade enemy attacks with the Resident Evil 3 dodge."],
-      ["new", "handgun", "Unlock a special skin by completing the game for the first time."],
-      ["fix", "spray", "Numerous bug fixes and gameplay improvements."],
-    ],
-  },
-  {
-    v: "v0.1.0", date: "2026-10-05", title: "Jill's Story, From Start to Finish",
-    summary: "Jill's campaign from the Spencer Mansion through its ending, with more of the story playable in SplitScreen.",
-    items: [
-      ["new", "handgun", "Play through Jill's story from beginning to end, including the later areas and the finale."],
-      ["new", "spray2", "Experience selected cutscenes and story moments together in cooperative SplitScreen."],
-      ["new", "shotgun", "Continue further together, with better co-op encounters, puzzles, interactions and progression."],
-      ["new", "magnum", "Feel gameplay through controller vibration."],
-      ["new", "knife", "Improved movement and controller response in exploration and combat."],
-      ["new", "handgun", "A refreshed main menu and an updated launcher."],
-      ["note", "spray", "Native online and LAN were disabled in this release; SplitScreen was the co-op mode."],
-    ],
-  },
-];
+/* ------------------------------------------------------------------ live data: GitHub releases + CHANGELOG.md
+   Version, release date and download count come from the GitHub releases API.
+   What's New reads CHANGELOG.md; a published release that CHANGELOG.md does not
+   have yet is read from the release text itself, so publishing a release on GitHub
+   is enough (the changelog workflow then adds it to CHANGELOG.md). */
+const REPO = "Depmify/Resident-Evil-SHATTERED";
+const RELEASES_API = `https://api.github.com/repos/${REPO}/releases?per_page=100`;
+const CHANGELOG_URL = `https://raw.githubusercontent.com/${REPO}/main/CHANGELOG.md`;
+const releaseStats = {}; // tag -> { date, downloads, url }
+let RELEASES = [];
+
+const fmtCount = (n) => n.toLocaleString("en-US");
+
+function cached(key, maxAgeMs) {
+  try {
+    const hit = JSON.parse(sessionStorage.getItem(key) || "null");
+    return hit && Date.now() - hit.at < maxAgeMs ? hit.data : null;
+  } catch { return null; }
+}
+
+function remember(key, data) {
+  try { sessionStorage.setItem(key, JSON.stringify({ at: Date.now(), data })); } catch { /* storage unavailable */ }
+}
+
+async function fetchReleases() {
+  let list = cached("shattered-releases-v2", 10 * 60 * 1000);
+  if (!list) {
+    const response = await fetch(RELEASES_API, { headers: { Accept: "application/vnd.github+json" } });
+    if (!response.ok) throw new Error(`GitHub releases: ${response.status}`);
+    list = (await response.json())
+      .filter((r) => !r.draft && !r.prerelease)
+      .map((r) => ({
+        tag: r.tag_name,
+        name: r.name || "",
+        body: r.body || "",
+        date: (r.published_at || r.created_at).slice(0, 10),
+        downloads: r.assets.reduce((sum, a) => sum + a.download_count, 0),
+        url: r.html_url,
+      }))
+      .sort((a, b) => b.date.localeCompare(a.date));
+    remember("shattered-releases-v2", list);
+  }
+  return list;
+}
+
+function showLatest(latest) {
+  if (!latest) return;
+  document.querySelectorAll("[data-release-version]").forEach((el) => { el.textContent = latest.tag; });
+  document.querySelectorAll("[data-release-link]").forEach((el) => { el.href = latest.url; });
+  document.querySelectorAll("[data-release-date]").forEach((el) => { el.textContent = latest.date; });
+  document.querySelectorAll("[data-release-downloads]").forEach((el) => { el.textContent = fmtCount(latest.downloads); });
+}
+
+// CHANGELOG.md: "## vX.Y.Z — Title", a summary paragraph, then "### ..." sections.
+// Bullets under a "Fixes" heading are fixes, under "What's New"/"What's Changed" are
+// new; anything else (other headings, paragraphs after a list) becomes a note.
+const NEW_ICONS = ["handgun", "shotgun", "magnum", "knife", "spray2"];
+
+function plain(text) {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseChangelog(md) {
+  const releases = [];
+  let current = null;
+  let kind = null;
+  for (const raw of md.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith("```")) continue;
+    const release = /^##\s+(v[\w.\-]+)\s*(?:[—–-]+\s*(.*))?$/.exec(line);
+    if (release) {
+      current = { v: release[1], title: plain(release[2] || ""), summary: "", items: [] };
+      releases.push(current);
+      kind = null;
+      continue;
+    }
+    if (!current || /^#\s/.test(line)) continue;
+    const heading = /^###\s+(.*)$/.exec(line);
+    if (heading) {
+      kind = /fix/i.test(heading[1]) ? "fix" : /new|changed|added/i.test(heading[1]) ? "new" : "note";
+      continue;
+    }
+    const bullet = /^[-*+]\s+(.*)$/.exec(line) || /^\d+\.\s+(.*)$/.exec(line);
+    if (bullet) {
+      current.items.push([kind || "new", plain(bullet[1])]);
+    } else if (!kind && !current.summary) {
+      current.summary = plain(line);
+    } else if (/^[A-Za-z]/.test(line)) {
+      current.items.push(["note", plain(line)]);
+    }
+  }
+  releases.forEach((r) => {
+    let n = 0;
+    r.items = r.items.map(([k, text]) => [k, k === "fix" ? "spray" : k === "note" ? "knife" : NEW_ICONS[n++ % NEW_ICONS.length], text]);
+  });
+  return releases.filter((r) => r.items.length);
+}
+
+async function fetchChangelog() {
+  let md = cached("shattered-changelog", 10 * 60 * 1000);
+  if (!md) {
+    const response = await fetch(CHANGELOG_URL, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`CHANGELOG.md: ${response.status}`);
+    md = await response.text();
+    remember("shattered-changelog", md);
+  }
+  return md;
+}
+
+// A release's own text in the CHANGELOG shape. The release name may carry a subtitle
+// after a dash ("RESIDENT EVIL: SHATTERED v0.1.9 — Voice Chat"). The Installation and
+// Experimental sections and embedded images are left out, as in CHANGELOG.md
+// (.github/scripts/add_release_to_changelog.py applies the same rules).
+function releaseNotes(r) {
+  const subtitle = (/\s[—–-]\s(.+)$/.exec(r.name.replace(/^.*?\bv\d[\w.]*/, "")) || [])[1] || "";
+  const kept = [];
+  let skip = false;
+  for (const line of r.body.split(/\r?\n/)) {
+    if (/^#{2,3}\s/.test(line)) skip = /installation|experimental/i.test(line);
+    if (!skip && !/^\s*</.test(line)) kept.push(line);
+  }
+  return `## ${r.tag}${subtitle ? ` — ${subtitle}` : ""}\n\n${kept.join("\n")}`;
+}
 
 /* ------------------------------------------------------------------ what's new: item list + description */
 const newsList = document.querySelector("[data-news-list]");
@@ -178,7 +236,7 @@ const newsIcon = document.querySelector("[data-news-icon]");
 const newsLink = document.querySelector("[data-news-link]");
 const newsCount = document.querySelector("[data-news-count]");
 const TAGS = { new: ["NEW", "chip"], fix: ["FIX", "chip chip-ink"], note: ["NOTE", "chip chip-orange"] };
-let release = RELEASES[0];
+let release = null;
 let filter = "all";
 let typeTimer = 0;
 
@@ -202,7 +260,16 @@ function selectItem(button, item, index) {
   typewrite(newsText, item[2]);
 }
 
+function renderStats() {
+  if (!release) return;
+  const stats = releaseStats[release.v];
+  document.querySelector("[data-news-date]").textContent = stats ? stats.date : "---";
+  document.querySelector("[data-news-downloads]").textContent = stats ? fmtCount(stats.downloads) : "---";
+  newsLink.href = stats ? stats.url : `https://github.com/${REPO}/releases`;
+}
+
 function renderNews() {
+  if (!release) return;
   newsList.textContent = "";
   const items = release.items.map((it, i) => [it, i]).filter(([it]) => filter === "all" || it[0] === filter);
   items.forEach(([item, index]) => {
@@ -219,13 +286,13 @@ function renderNews() {
   const n = release.items.filter((i) => i[0] === "new").length;
   const f = release.items.filter((i) => i[0] === "fix").length;
   newsCount.textContent = `${n} NEW  ${f} FIX`;
-  document.querySelector("[data-news-date]").textContent = release.date;
   document.querySelector("[data-news-new]").textContent = String(n);
   document.querySelector("[data-news-fix]").textContent = String(f);
   newsSummary.textContent = release.summary;
-  newsLink.href = `https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/${release.v}`;
+  renderStats();
   const first = newsList.querySelector("button");
   if (first) selectItem(first, items[0][0], items[0][1]);
+  else { newsTitle.textContent = release.v; newsSub.textContent = release.title; newsText.textContent = "Nothing in this category."; }
 }
 
 document.querySelectorAll("[data-news-filter]").forEach((chip) => {
@@ -245,24 +312,30 @@ function closeDropdowns() {
 
 const versionDrop = document.querySelector('[data-dropdown="version"]');
 const versionList = versionDrop.querySelector(".dropdown-list");
-RELEASES.forEach((r) => {
-  const b = document.createElement("button");
-  b.type = "button";
-  b.innerHTML = `<span>${r.v}</span><span class="muted"></span>`;
-  b.lastChild.textContent = r.title.split(/[,&]/)[0].trim();
-  b.classList.toggle("is-sel", r === release);
-  b.addEventListener("click", (e) => {
-    e.stopPropagation();
-    release = r;
-    versionDrop.querySelector("[data-dropdown-value]").textContent = r.v;
-    versionList.querySelectorAll("button").forEach((x) => x.classList.toggle("is-sel", x === b));
-    closeDropdowns();
-    renderNews();
-    se("confirm");
+
+function buildVersionList() {
+  versionList.textContent = "";
+  RELEASES.forEach((r) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.innerHTML = `<span></span><span class="muted"></span>`;
+    b.firstChild.textContent = r.v;
+    b.lastChild.textContent = r.title.split(/[,&]/)[0].trim();
+    b.classList.toggle("is-sel", r === release);
+    b.addEventListener("click", (e) => {
+      e.stopPropagation();
+      release = r;
+      versionDrop.querySelector("[data-dropdown-value]").textContent = r.v;
+      versionList.querySelectorAll("button").forEach((x) => x.classList.toggle("is-sel", x === b));
+      closeDropdowns();
+      renderNews();
+      se("confirm");
+    });
+    b.addEventListener("mouseenter", () => se("cursor"));
+    versionList.append(b);
   });
-  b.addEventListener("mouseenter", () => se("cursor"));
-  versionList.append(b);
-});
+}
+
 versionDrop.querySelector(".field").addEventListener("click", (e) => {
   e.stopPropagation();
   const open = !versionDrop.classList.contains("is-open");
@@ -273,19 +346,77 @@ versionDrop.querySelector(".field").addEventListener("click", (e) => {
   se(open ? "confirm" : "cancel");
 });
 
-renderNews();
+Promise.allSettled([fetchReleases(), fetchChangelog()]).then(([published, changelog]) => {
+  const releases = published.status === "fulfilled" ? published.value : [];
+  const logged = changelog.status === "fulfilled" ? parseChangelog(changelog.value) : [];
+  releases.forEach((r) => { releaseStats[r.tag] = r; });
+  showLatest(releases[0]); // without the API the page keeps the version and date it was written with
+
+  // Releases newer than everything in CHANGELOG.md come from their own text.
+  const inLog = new Set(logged.map((r) => r.v));
+  const newestLogged = releases.filter((r) => inLog.has(r.tag)).map((r) => r.date).sort().pop() || "";
+  const fresh = releases
+    .filter((r) => !inLog.has(r.tag) && r.date > newestLogged)
+    .map((r) => parseChangelog(releaseNotes(r))[0])
+    .filter(Boolean);
+
+  RELEASES = [...fresh, ...logged];
+  release = RELEASES[0] || null;
+  if (!release) {
+    newsTitle.textContent = "Changelog";
+    newsSub.textContent = "";
+    newsText.textContent = "The changelog could not be loaded right now. Use FULL CHANGELOG to read it on GitHub.";
+    return;
+  }
+  versionDrop.querySelector("[data-dropdown-value]").textContent = release.v;
+  buildVersionList();
+  renderNews();
+});
 
 /* ------------------------------------------------------------------ media viewer */
 const gallery = document.querySelector("[data-gallery]");
 const thumbs = Array.from(gallery.querySelectorAll("[data-image]"));
-const galleryImage = gallery.querySelector("[data-gallery-image]");
+const slides = Array.from(gallery.querySelectorAll("[data-gallery-slide]"));
+const slideMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let shot = 0;
+let front = 0;
+let slideTimer = 0;
+let slideToken = 0;
+
+// Two stacked images: the next picture loads behind and fades in over the current one.
+function showSlide(src, alt) {
+  const token = ++slideToken;
+  const back = slides[1 - front];
+  const swap = () => {
+    back.onload = back.onerror = null;
+    if (token !== slideToken) return;
+    back.alt = alt;
+    back.removeAttribute("aria-hidden");
+    slides[front].classList.remove("is-on");
+    slides[front].setAttribute("aria-hidden", "true");
+    slides[front].alt = "";
+    back.classList.add("is-on");
+    front = 1 - front;
+  };
+  if (slides[front].getAttribute("src") === src) return; // already showing it
+  back.onload = back.onerror = swap;
+  back.src = src;
+  if (back.complete && back.naturalWidth) swap();
+}
 
 function showShot(i) {
   shot = (i + thumbs.length) % thumbs.length;
   const t = thumbs[shot];
-  galleryImage.src = t.dataset.image;
-  galleryImage.alt = t.dataset.alt;
+  const pictures = t.dataset.image.split("|");
+  let picture = 0;
+  clearInterval(slideTimer);
+  showSlide(pictures[0], t.dataset.alt);
+  if (pictures.length > 1 && !slideMotion.matches) {
+    slideTimer = setInterval(() => {
+      picture = (picture + 1) % pictures.length;
+      showSlide(pictures[picture], t.dataset.alt);
+    }, Number(t.dataset.interval) || 5000);
+  }
   gallery.querySelector("[data-gallery-title]").textContent = t.dataset.title;
   gallery.querySelector("[data-gallery-caption]").textContent = t.dataset.caption;
   gallery.querySelector("[data-gallery-count]").textContent = `${shot + 1} / ${thumbs.length}`;

@@ -1,5 +1,23 @@
 # RESIDENT EVIL: SHATTERED
 
+## v0.1.9 — Voice Chat, New Lobby & Resident Evil 2 Inventory
+
+SHATTERED v0.1.9 lets you talk to your partners over radio voice chat, brings a redesigned online lobby and adds a Resident Evil 2 inventory style. Every control can now be customized, fallen S.T.A.R.S. members rise again, and this update includes a range of fixes.
+
+### What's New for Players
+
+- Talk to your partners with the new radio voice chat in online and LAN games. Hold the push-to-talk button to speak.
+- Find and join games in a redesigned online lobby, with in-room chat and character selection.
+- Choose a new Resident Evil 2 inventory style. In co-op, each player picks their own.
+- Enjoy a reworked Resident Evil 1.5 inventory, closer than ever to the original prototype.
+- Customize every control for keyboard, mouse and gamepad from the game or the redesigned launcher, and use the mouse in every menu.
+- Watch out for fallen S.T.A.R.S. members who come back as zombies.
+- See dropped items as real objects on the floor, and discover five new gun powder mixes.
+
+### Fixes
+
+- Various fixes and improvements.
+
 ## v0.1.8 — Classic Mode, New Inventory Style & Smoother Co-op
 
 SHATTERED v0.1.8 adds Classic Mode, a Silent Hill 4-style inventory, new zombies and a more dangerous Mr. X. Online play also feels more responsive, and this update includes a range of fixes.

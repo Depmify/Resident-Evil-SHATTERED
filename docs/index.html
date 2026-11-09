@@ -22,7 +22,7 @@
         <div class="menu" data-menu>
           <button type="button" class="menu-title" aria-expanded="false">PLAY</button>
           <div class="menu-list" role="menu">
-            <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><span>Download v0.1.8</span><kbd>ZIP</kbd></a>
+            <a role="menuitem" data-release-link href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><span>Download <span data-release-version>v0.1.8</span></span><kbd>ZIP</kbd></a>
             <a role="menuitem" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases"><span>All releases</span><kbd>GITHUB</kbd></a>
             <hr>
             <a role="menuitem" href="#setup"><span>How to install</span><kbd>3 STEPS</kbd></a>
@@ -49,8 +49,8 @@
       </nav>
       <div class="menubar-right">
         <span class="muted">PUBLIC RELEASE</span>
-        <span class="chip chip-ink">v0.1.8</span>
-        <a class="btn btn-go" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD</a>
+        <span class="chip chip-ink" data-release-version>v0.1.8</span>
+        <a class="btn btn-go" data-release-link href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD</a>
       </div>
     </header>
 
@@ -81,8 +81,13 @@
                 <span class="logo-sub">S H A T T E R E D</span>
               </h1>
               <p class="lead">Classic fixed-camera horror, shared. Bring your <b>GOG</b>, <b>Steam</b> or <b>Sourcenext</b> copy and play alone, in <b>SplitScreen</b>, or online with up to <b>four</b> players.</p>
+              <dl class="release-data release-data-3">
+                <div><dt>VERSION</dt><dd data-release-version>v0.1.8</dd></div>
+                <div><dt>RELEASED</dt><dd data-release-date>2026-11-01</dd></div>
+                <div><dt>DOWNLOADS</dt><dd data-release-downloads>---</dd></div>
+              </dl>
               <div class="actions">
-                <a class="btn btn-go btn-big" href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD v0.1.8 <kbd>WINDOWS</kbd></a>
+                <a class="btn btn-go btn-big" data-release-link href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8"><img class="px" src="kit/tri-right.png" alt="">DOWNLOAD <span data-release-version>v0.1.8</span> <kbd>WINDOWS</kbd></a>
                 <a class="btn" href="#news">WHAT'S NEW</a>
                 <a class="btn" href="#setup">INSTALL</a>
               </div>
@@ -116,7 +121,7 @@
           <div class="section-tools">
             <span class="muted">RELEASE</span>
             <div class="dropdown" data-dropdown="version">
-              <button type="button" class="field field-drop" aria-expanded="false"><span data-dropdown-value>v0.1.8</span></button>
+              <button type="button" class="field field-drop" aria-expanded="false"><span data-dropdown-value>---</span></button>
               <div class="dropdown-list" role="listbox"></div>
             </div>
             <a class="btn" href="https://github.com/Depmify/Resident-Evil-SHATTERED/blob/main/CHANGELOG.md">FULL CHANGELOG</a>
@@ -139,7 +144,7 @@
               <div class="detail-head">
                 <span class="slot" data-news-icon></span>
                 <div>
-                  <h3 class="serif" data-news-title>v0.1.8</h3>
+                  <h3 class="serif" data-news-title>Loading</h3>
                   <p class="muted" data-news-sub></p>
                 </div>
               </div>
@@ -149,7 +154,7 @@
                 <div><dt>DATE</dt><dd data-news-date></dd></div>
                 <div><dt>NEW</dt><dd data-news-new></dd></div>
                 <div><dt>FIXES</dt><dd data-news-fix></dd></div>
-                <div><dt>BUILD</dt><dd>WINDOWS</dd></div>
+                <div><dt>DOWNLOADS</dt><dd data-news-downloads>---</dd></div>
               </dl>
               <a class="btn" data-news-link href="https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.8">OPEN RELEASE PAGE</a>
             </div>
@@ -201,7 +206,10 @@
           <div class="titlebar"><span data-gallery-title>SPLITSCREEN</span><em data-gallery-count>1 / 4</em></div>
           <div class="media-body">
           <div class="media-stage">
-            <div class="screen media-frame"><img data-gallery-image src="assets/splitscreen-gameplay.png" alt="SplitScreen gameplay"></div>
+            <div class="screen media-frame">
+              <img class="slide is-on" data-gallery-slide src="assets/splitscreen-gameplay.png" alt="SplitScreen gameplay">
+              <img class="slide" data-gallery-slide alt="" aria-hidden="true">
+            </div>
             <div class="screen-bar">
               <button type="button" class="media-nav" data-gallery-prev aria-label="Previous"><img class="px" src="kit/chip-l1.png" alt="">PREV</button>
               <span class="muted" data-gallery-caption>Two players on one PC, side by side.</span>
@@ -210,9 +218,9 @@
           </div>
           <div class="thumbs" role="list">
             <button type="button" class="thumb is-active" data-image="assets/splitscreen-gameplay.png" data-title="SPLITSCREEN" data-caption="Two players on one PC, side by side." data-alt="SplitScreen gameplay"><img src="assets/splitscreen-gameplay.png" alt=""><span>SplitScreen</span></button>
-            <button type="button" class="thumb" data-image="assets/online-character-select.png" data-title="ONLINE CHARACTER SELECT" data-caption="Pick your character before an online round." data-alt="Online character select with Barry Burton and Jill Valentine"><img src="assets/online-character-select.png" alt=""><span>Character Select</span></button>
+            <button type="button" class="thumb" data-image="assets/online-1.webp|assets/online-2.webp|assets/online-3.webp|assets/online-4.webp" data-interval="4500" data-title="ONLINE" data-caption="Up to four players online, from the mansion to the laboratories." data-alt="Online co-op with four players"><img src="assets/online-1.webp" alt=""><span>Online</span></button>
             <button type="button" class="thumb" data-image="assets/game-settings.png" data-title="GAME SETTINGS" data-caption="Display, frame limit, split orientation and more." data-alt="Video and audio settings"><img src="assets/game-settings.png" alt=""><span>Settings</span></button>
-            <button type="button" class="thumb" data-image="assets/launcher-game.png" data-title="LAUNCHER" data-caption="Select your game folder and start." data-alt="SHATTERED launcher"><img src="assets/launcher-game.png" alt=""><span>Launcher</span></button>
+            <button type="button" class="thumb thumb-tall" data-image="assets/launcher-launch.png|assets/launcher-controls.png" data-interval="7000" data-title="LAUNCHER" data-caption="Game folders, display, inventory style per player and control rebinding." data-alt="SHATTERED launcher"><img src="assets/launcher-launch.png" alt=""><span>Launcher</span></button>
           </div>
           </div>
         </div>
@@ -327,7 +335,7 @@
     <!-- ============================================================ STATUS BAR -->
     <div class="statusbar">
       <span class="chip">READY</span>
-      <span>v0.1.8</span>
+      <span data-release-version>v0.1.8</span>
       <span class="muted">SECTION</span><span data-status-section>TOP</span>
       <span class="spacer"></span>
       <span class="muted hide-narrow">L1 R1 media   PREV NEXT file   ESC close</span>
