@@ -23,12 +23,10 @@ Reports using unsupported versions may be closed or deferred until those version
 
 ## Requirements
 
-- Windows
+- 64-bit Windows
+- The **.NET 10 Desktop Runtime (x64)**, which public releases do not bundle
 - A public SHATTERED release package
 - A legally obtained PC copy of Resident Evil 1 (GOG, Steam, Sourcenext, or another existing PC version)
-- The required .NET Desktop Runtime if the release is framework-dependent
-
-If the release notes say the build is self-contained, you do not need to install .NET separately. If it is framework-dependent, install the **x86 .NET Desktop Runtime 10.0**.
 
 ## Expected Folder Layout
 
@@ -36,18 +34,22 @@ Extract the release into its own SHATTERED folder. You do not need to copy your 
 
 ```text
 RESIDENT EVIL SHATTERED/
-  Resident Evil Launcher.exe
+  Launcher.exe
   SHATTERED.exe
-  launcher-config.json        (created after saving launcher settings)
+  Settings.ini        (created when the launcher or the game saves settings)
 ```
 
 ## Setup Steps
 
 1. Download the latest SHATTERED release from the [Releases](https://github.com/Depmify/Resident-Evil-SHATTERED/releases) page.
 2. Extract the release into a dedicated folder, for example `RESIDENT EVIL SHATTERED`.
-3. Start `Resident Evil Launcher.exe`.
-4. In the launcher, select your Resident Evil 1 PC installation folder (GOG, Steam, Sourcenext, or another PC version).
-5. Choose **Solo** for a standard launch, **SplitScreen** to configure a two-player local session, or play **Online**.
+3. Start `Launcher.exe`.
+4. In the **LAUNCH** tab, select your Resident Evil 1 PC installation folder (GOG, Steam, Sourcenext, or another PC version).
+5. Press **START GAME**.
+6. In the game, choose how to play from the main menu:
+   - **NEW GAME > SINGLEPLAYER** to play alone.
+   - **NEW GAME > COOPERATIVE** for two-player SplitScreen on one PC (Story Mode or Tyrant Battle).
+   - **MULTIPLAYER** to create or join an online or LAN room.
 
 ## Cooperative Play and Mods
 
@@ -60,48 +62,44 @@ Online sessions support up to **four players**:
 
 See the [v0.1.10 release notes](https://github.com/Depmify/Resident-Evil-SHATTERED/releases/tag/v0.1.10) for the current release details.
 
+Online and LAN rounds include radio voice chat: hold the push-to-talk button to speak.
+
 Players with different mods installed can start a round together. Check each mod's instructions and compatibility information before installing it.
 
-## Launcher Behavior
+## The Launcher
 
-The launcher expects `SHATTERED.exe` to be next to the launcher or otherwise discoverable from the release folder.
+The launcher expects `SHATTERED.exe` to be next to it in the release folder. Its settings save automatically to `Settings.ini`.
 
-- **Solo** starts `SHATTERED.exe` directly with no launcher configuration arguments.
-- **SplitScreen** opens the setup flow first, saves launcher settings, then starts `SHATTERED.exe --config "<path-to-launcher-config.json>"`.
-- **Settings** configures general game options, including display, language, and input mappings.
-- The game installation selected in the launcher is used as the game data root. Direct room tools rely on the `Stage1` through `Stage7` folders being present in that installation.
+- **LAUNCH**: your Resident Evil 1 PC data folder, display options, the inventory style for each player, and **START GAME**.
+- **CONTROLS**: keyboard, mouse and gamepad bindings for each player.
+- **SUPPORT**: a link to support the project.
 
-Launching `SHATTERED.exe` by itself starts the normal full boot path with default standalone settings.
+Starting `SHATTERED.exe` directly uses the same saved settings.
 
-## Useful Runtime Keys
+## Controls and Keys
 
-- `F3` toggles the FPS/debug overlay.
+Every control can be changed in the launcher's **CONTROLS** tab or in the game under **OPTIONS > CONTROLS**. The mouse works in every menu. Default keys include:
+
+- `F3` shows or hides the FPS and game info panel.
 - `F11` toggles fullscreen.
 
 ## Troubleshooting
 
 ### `SHATTERED.exe was not found`
 
-Make sure `SHATTERED.exe` is in the release folder next to `Resident Evil Launcher.exe`.
+Make sure `SHATTERED.exe` is in the release folder next to `Launcher.exe`.
 
-### `Could not locate Game\JPN`
+### The game cannot find your Resident Evil 1 data
 
-Some internal messages may still use the older `Game\JPN` wording. This usually means SHATTERED could not find the game data root. Open the launcher and check that the selected game installation is the root folder of your Resident Evil 1 PC installation.
+Open the launcher and check that the folder in the **LAUNCH** tab is the root of your Resident Evil 1 PC installation, not a subfolder.
 
 ### Black screen, missing title screen, missing movies, or room load failures
 
 Check that the selected game installation is complete and includes the expected `Data`, `Movie`, `Sound`, `Voice`, `Stage*`, `enemy`, `ITEM_M1`, `Item_m2`, and `Effspr` folders.
 
-### Empty room catalog in the launcher
-
-The launcher room catalog expects `Stage1` through `Stage7` folders inside the selected game installation. Check that the launcher points to the root of your installation and not to a subfolder.
-
 ### Crashes or startup errors
 
-Look for logs next to the executables:
-
-- `launcher-error.log`
-- `depmify-runtime.log`
+When SHATTERED closes because of an error, it writes `Crash.log` next to `SHATTERED.exe`, or to `%LOCALAPPDATA%\Resident Evil SHATTERED\Crash.log` if that folder cannot be written. Problems while saving or loading a game also write `SaveError.log` or `LoadError.log`.
 
 Include these logs when reporting crashes.
 
@@ -113,8 +111,8 @@ When opening an issue, include:
 - Windows version
 - Which PC version of Resident Evil 1 you are using (GOG, Steam, Sourcenext, etc.)
 - Whether you used Solo, SplitScreen, or Online, and how many players were in the session
-- Relevant launcher settings or `launcher-config.json`
-- Room, character, loadout, or direct-room setup used
+- Your `Settings.ini`
+- Room, character, and difficulty where it happened
 - Steps to reproduce
 - Screenshots, video, or logs when available
 
